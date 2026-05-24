@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Study Builder — Internal Tool</title>
+<title>Constructor de Casos de Éxito — Uso Interno</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -198,43 +198,43 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
 
 <header class="header">
   <div class="header-left">
-    <span class="header-brand"><span>◆</span> Case Study Builder</span>
-    <span class="header-badge">Internal</span>
+    <span class="header-brand"><span>◆</span> Constructor de Casos de Éxito</span>
+    <span class="header-badge">Interno</span>
   </div>
   <div class="header-actions">
     <button class="btn" onclick="clearAll()">
       <svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M5 4V2h6v2M6 7v5M10 7v5M3 4l1 9h8l1-9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Clear all
+      Limpiar todo
     </button>
     <button class="btn btn-accent" onclick="exportSummary()">
       <svg viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 6l4 4 4-4M2 11v2a1 1 0 001 1h10a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Export Summary
+      Exportar Resumen
     </button>
   </div>
 </header>
 
 <div class="vertical-bar">
-  <div class="vtab active-re" id="vtab-re" onclick="setVertical('re')">🏢 Real Estate</div>
-  <div class="vtab" id="vtab-bank" onclick="setVertical('bank')">🏦 Banking & Financial Services</div>
-  <div class="vtab" id="vtab-log" onclick="setVertical('log')">📦 Logistics & Supply Chain</div>
+  <div class="vtab active-re" id="vtab-re" onclick="setVertical('re')">🏢 Inmobiliarias</div>
+  <div class="vtab" id="vtab-bank" onclick="setVertical('bank')">🏦 Banca y Servicios Financieros</div>
+  <div class="vtab" id="vtab-log" onclick="setVertical('log')">📦 Logística y Cadena de Suministro</div>
 </div>
 
 <div class="layout">
   <nav class="sidebar">
     <div class="sidebar-section">
-      <div class="sidebar-lbl">Sections</div>
-      <div class="sidebar-item active" id="nav-client" onclick="navTo('s-client','nav-client')"><span class="s-dot"></span>Client Info</div>
-      <div class="sidebar-item" id="nav-questions" onclick="navTo('s-questions','nav-questions')"><span class="s-dot"></span>Interview Questions</div>
-      <div class="sidebar-item" id="nav-metrics" onclick="navTo('s-metrics','nav-metrics')"><span class="s-dot"></span>Before / After Metrics</div>
-      <div class="sidebar-item" id="nav-quotes" onclick="navTo('s-quotes','nav-quotes')"><span class="s-dot"></span>Quotes</div>
-      <div class="sidebar-item" id="nav-checklist" onclick="navTo('s-checklist','nav-checklist')"><span class="s-dot"></span>Publication Checklist</div>
+      <div class="sidebar-lbl">Secciones</div>
+      <div class="sidebar-item active" id="nav-client" onclick="navTo('s-client','nav-client')"><span class="s-dot"></span>Info del Cliente</div>
+      <div class="sidebar-item" id="nav-questions" onclick="navTo('s-questions','nav-questions')"><span class="s-dot"></span>Preguntas de Entrevista</div>
+      <div class="sidebar-item" id="nav-metrics" onclick="navTo('s-metrics','nav-metrics')"><span class="s-dot"></span>Métricas Antes / Después</div>
+      <div class="sidebar-item" id="nav-quotes" onclick="navTo('s-quotes','nav-quotes')"><span class="s-dot"></span>Citas</div>
+      <div class="sidebar-item" id="nav-checklist" onclick="navTo('s-checklist','nav-checklist')"><span class="s-dot"></span>Checklist de Publicación</div>
     </div>
     <hr class="sidebar-divider">
     <div class="sidebar-section">
-      <div class="sidebar-lbl">Readiness</div>
+      <div class="sidebar-lbl">Preparación</div>
       <div class="readiness-block">
         <div class="readiness-num" id="sb-pct">0%</div>
-        <div class="readiness-sub" style="font-size:11px;color:var(--text3);margin-top:2px;margin-bottom:8px">checklist complete</div>
+        <div class="readiness-sub" style="font-size:11px;color:var(--text3);margin-top:2px;margin-bottom:8px">checklist completo</div>
         <div class="r-track"><div class="r-fill" id="sb-bar" style="width:0"></div></div>
       </div>
     </div>
@@ -245,27 +245,27 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
     <!-- 01 CLIENT INFO -->
     <div class="section open" id="s-client">
       <div class="section-hdr" onclick="toggleSection('s-client')">
-        <div class="section-title"><span class="section-num">01</span>Client Information</div>
+        <div class="section-title"><span class="section-num">01</span>Info del Clientermation</div>
         <span class="chevron">▾</span>
       </div>
       <div class="section-body">
         <div class="frow c2">
-          <div class="field"><label>Company Name</label><input type="text" id="c-company" placeholder="e.g. Grupo Inmobiliario Atlántico" oninput="autosave()"></div>
-          <div class="field"><label>Industry Vertical</label><input type="text" id="c-vertical" readonly style="color:var(--text3)"></div>
+          <div class="field"><label>Nombre de la Empresa</label><input type="text" id="c-company" placeholder="ej. Grupo Inmobiliario Atlántico" oninput="autosave()"></div>
+          <div class="field"><label>Vertical</label><input type="text" id="c-vertical" readonly style="color:var(--text3)"></div>
         </div>
         <div class="frow c2">
-          <div class="field"><label>Contact Name</label><input type="text" id="c-contact" placeholder="Full name" oninput="autosave()"></div>
-          <div class="field"><label>Contact Title</label><input type="text" id="c-ctitle" placeholder="e.g. COO, Head of Operations" oninput="autosave()"></div>
+          <div class="field"><label>Nombre del Contacto</label><input type="text" id="c-contact" placeholder="Nombre completo" oninput="autosave()"></div>
+          <div class="field"><label>Cargo del Contacto</label><input type="text" id="c-ctitle" placeholder="ej. COO, Director de Operaciones" oninput="autosave()"></div>
         </div>
         <div class="frow c3">
-          <div class="field"><label>Interview Date</label><input type="date" id="c-date" oninput="autosave()"></div>
-          <div class="field"><label>Interviewer</label><input type="text" id="c-interviewer" placeholder="Team member name" oninput="autosave()"></div>
-          <div class="field"><label>Confidentiality Level</label>
+          <div class="field"><label>Fecha de Entrevista</label><input type="date" id="c-date" oninput="autosave()"></div>
+          <div class="field"><label>Entrevistador</label><input type="text" id="c-interviewer" placeholder="Miembro del equipo" oninput="autosave()"></div>
+          <div class="field"><label>Nivel de Confidencialidad</label>
             <select id="c-conf" onchange="autosave()">
-              <option value="">Select</option>
-              <option value="full">Full name approved for publication</option>
-              <option value="sector">Sector anonymization only</option>
-              <option value="anon">Fully confidential — internal only</option>
+              <option value="">Seleccionar</option>
+              <option value="full">Nombre completo aprobado para publicación</option>
+              <option value="sector">Anonimización por sector únicamente</option>
+              <option value="anon">Totalmente confidencial — solo interno</option>
             </select>
           </div>
         </div>
@@ -276,8 +276,8 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
     <div class="section open" id="s-questions">
       <div class="section-hdr" onclick="toggleSection('s-questions')">
         <div class="section-title">
-          <span class="section-num">02</span>Interview Questions
-          <span class="tag tag-re" id="q-vtag">🏢 Real Estate</span>
+          <span class="section-num">02</span>Preguntas de Entrevista
+          <span class="tag tag-re" id="q-vtag">🏢 Inmobiliarias</span>
         </div>
         <span class="chevron">▾</span>
       </div>
@@ -287,16 +287,16 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
     <!-- 03 METRICS -->
     <div class="section open" id="s-metrics">
       <div class="section-hdr" onclick="toggleSection('s-metrics')">
-        <div class="section-title"><span class="section-num">03</span>Before / After Metrics</div>
+        <div class="section-title"><span class="section-num">03</span>Métricas Antes / Después</div>
         <span class="chevron">▾</span>
       </div>
       <div class="section-body">
-        <div class="help" style="margin-bottom:14px">Fill both columns. Every "After" number requires a "Before" baseline to be publication-ready. Min 3 complete rows required.</div>
+        <div class="help" style="margin-bottom:14px">Completa ambas columnas. Cada número "Después" requiere una línea base "Antes" para publicación. Mínimo 3 filas completas.</div>
         <table class="mtable">
           <thead><tr>
-            <th style="width:42%">Metric</th>
-            <th class="col-before" style="width:27%">Before (baseline)</th>
-            <th class="col-after" style="width:27%">After (post-implementation)</th>
+            <th style="width:42%">Métrica</th>
+            <th class="col-before" style="width:27%">Antes (línea base)</th>
+            <th class="col-after" style="width:27%">Después (post-implementación)</th>
           </tr></thead>
           <tbody id="metrics-body"></tbody>
         </table>
@@ -306,62 +306,62 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
     <!-- 04 QUOTES -->
     <div class="section open" id="s-quotes">
       <div class="section-hdr" onclick="toggleSection('s-quotes')">
-        <div class="section-title"><span class="section-num">04</span>Quote Capture</div>
+        <div class="section-title"><span class="section-num">04</span>Captura de Citas</div>
         <span class="chevron">▾</span>
       </div>
       <div class="section-body">
-        <div class="help" style="margin-bottom:14px">All 3 checks must be ticked before a quote is publication-ready. A quote that could apply to any company is not usable.</div>
+        <div class="help" style="margin-bottom:14px">Los 3 checks deben estar marcados para que una cita sea apta para publicación. Una cita que aplique a cualquier empresa no es utilizable.</div>
 
         <div class="q-block">
-          <div class="q-block-hdr">Executive Sponsor Quote <span class="badge badge-req">Required</span></div>
+          <div class="q-block-hdr">Cita del Sponsor Ejecutivo <span class="badge badge-req">Requerida</span></div>
           <div class="q-block-body">
             <div class="frow c3" style="margin-bottom:9px">
-              <div class="field"><label>Name</label><input type="text" id="q1-name" placeholder="Full name" oninput="autosave()"></div>
-              <div class="field"><label>Title</label><input type="text" id="q1-title" placeholder="C-level / VP" oninput="autosave()"></div>
-              <div class="field"><label>Company</label><input type="text" id="q1-co" placeholder="Company" oninput="autosave()"></div>
+              <div class="field"><label>Name</label><input type="text" id="q1-name" placeholder="Nombre completo" oninput="autosave()"></div>
+              <div class="field"><label>Cargo</label><input type="text" id="q1-title" placeholder="C-level / VP" oninput="autosave()"></div>
+              <div class="field"><label>Empresa</label><input type="text" id="q1-co" placeholder="Company" oninput="autosave()"></div>
             </div>
-            <div class="field"><label>Quote — verbatim</label><textarea id="q1-text" placeholder="Capture exact words. Fix grammar only with client approval. Do not paraphrase." oninput="autosave()"></textarea></div>
+            <div class="field"><label>Cita — textual</label><textarea id="q1-text" placeholder="Captura las palabras exactas. Corrige gramática solo con aprobación del cliente. No parafrasear." oninput="autosave()"></textarea></div>
             <div class="quote-checks">
-              <div class="check-lbl">Passes the test</div>
-              <div class="chk"><input type="checkbox" id="q1c1" onchange="autosave()"><label for="q1c1">Contains a specific number (%, $, time, count)</label></div>
-              <div class="chk"><input type="checkbox" id="q1c2" onchange="autosave()"><label for="q1c2">Contains a clear before/after or improvement reference</label></div>
-              <div class="chk"><input type="checkbox" id="q1c3" onchange="autosave()"><label for="q1c3">Could NOT apply to any other company or situation</label></div>
+              <div class="check-lbl">Pasa el test</div>
+              <div class="chk"><input type="checkbox" id="q1c1" onchange="autosave()"><label for="q1c1">Contiene un número específico (%, $, tiempo, cantidad)</label></div>
+              <div class="chk"><input type="checkbox" id="q1c2" onchange="autosave()"><label for="q1c2">Contiene una referencia clara de antes/después o mejora</label></div>
+              <div class="chk"><input type="checkbox" id="q1c3" onchange="autosave()"><label for="q1c3">NO puede aplicar a ninguna otra empresa o situación</label></div>
             </div>
           </div>
         </div>
 
         <div class="q-block">
-          <div class="q-block-hdr">Technical Lead Quote <span class="badge badge-req">Required</span></div>
+          <div class="q-block-hdr">Cita del Líder Técnico <span class="badge badge-req">Requerida</span></div>
           <div class="q-block-body">
             <div class="frow c3" style="margin-bottom:9px">
-              <div class="field"><label>Name</label><input type="text" id="q2-name" placeholder="Full name" oninput="autosave()"></div>
-              <div class="field"><label>Title</label><input type="text" id="q2-title" placeholder="e.g. Head of IT, CTO" oninput="autosave()"></div>
-              <div class="field"><label>Company</label><input type="text" id="q2-co" placeholder="Company" oninput="autosave()"></div>
+              <div class="field"><label>Name</label><input type="text" id="q2-name" placeholder="Nombre completo" oninput="autosave()"></div>
+              <div class="field"><label>Cargo</label><input type="text" id="q2-title" placeholder="ej. Director de TI, CTO" oninput="autosave()"></div>
+              <div class="field"><label>Empresa</label><input type="text" id="q2-co" placeholder="Company" oninput="autosave()"></div>
             </div>
-            <div class="field"><label>Quote — verbatim</label><textarea id="q2-text" placeholder="Focus on implementation experience, integration quality, technical outcome." oninput="autosave()"></textarea></div>
+            <div class="field"><label>Cita — textual</label><textarea id="q2-text" placeholder="Enfócate en la experiencia de implementación, calidad de integración y resultado técnico." oninput="autosave()"></textarea></div>
             <div class="quote-checks">
-              <div class="check-lbl">Passes the test</div>
-              <div class="chk"><input type="checkbox" id="q2c1" onchange="autosave()"><label for="q2c1">Contains a specific number (%, $, time, count)</label></div>
-              <div class="chk"><input type="checkbox" id="q2c2" onchange="autosave()"><label for="q2c2">Contains a clear before/after or improvement reference</label></div>
-              <div class="chk"><input type="checkbox" id="q2c3" onchange="autosave()"><label for="q2c3">Could NOT apply to any other company or situation</label></div>
+              <div class="check-lbl">Pasa el test</div>
+              <div class="chk"><input type="checkbox" id="q2c1" onchange="autosave()"><label for="q2c1">Contiene un número específico (%, $, tiempo, cantidad)</label></div>
+              <div class="chk"><input type="checkbox" id="q2c2" onchange="autosave()"><label for="q2c2">Contiene una referencia clara de antes/después o mejora</label></div>
+              <div class="chk"><input type="checkbox" id="q2c3" onchange="autosave()"><label for="q2c3">NO puede aplicar a ninguna otra empresa o situación</label></div>
             </div>
           </div>
         </div>
 
         <div class="q-block">
-          <div class="q-block-hdr">Operational Stakeholder Quote <span class="badge badge-opt">Optional</span></div>
+          <div class="q-block-hdr">Cita del Responsable Operativo <span class="badge badge-opt">Opcional</span></div>
           <div class="q-block-body">
             <div class="frow c3" style="margin-bottom:9px">
-              <div class="field"><label>Name</label><input type="text" id="q3-name" placeholder="Full name" oninput="autosave()"></div>
-              <div class="field"><label>Title</label><input type="text" id="q3-title" placeholder="e.g. Operations Manager" oninput="autosave()"></div>
-              <div class="field"><label>Company</label><input type="text" id="q3-co" placeholder="Company" oninput="autosave()"></div>
+              <div class="field"><label>Name</label><input type="text" id="q3-name" placeholder="Nombre completo" oninput="autosave()"></div>
+              <div class="field"><label>Cargo</label><input type="text" id="q3-title" placeholder="ej. Gerente de Operaciones" oninput="autosave()"></div>
+              <div class="field"><label>Empresa</label><input type="text" id="q3-co" placeholder="Company" oninput="autosave()"></div>
             </div>
-            <div class="field"><label>Quote — verbatim</label><textarea id="q3-text" placeholder="Day-to-day impact. What do they no longer have to do? What changed in their week?" oninput="autosave()"></textarea></div>
+            <div class="field"><label>Cita — textual</label><textarea id="q3-text" placeholder="Impacto día a día. ¿Qué ya no tienen que hacer? ¿Qué cambió en su semana?" oninput="autosave()"></textarea></div>
             <div class="quote-checks">
-              <div class="check-lbl">Passes the test</div>
-              <div class="chk"><input type="checkbox" id="q3c1" onchange="autosave()"><label for="q3c1">Contains a specific number (%, $, time, count)</label></div>
-              <div class="chk"><input type="checkbox" id="q3c2" onchange="autosave()"><label for="q3c2">Contains a clear before/after or improvement reference</label></div>
-              <div class="chk"><input type="checkbox" id="q3c3" onchange="autosave()"><label for="q3c3">Could NOT apply to any other company or situation</label></div>
+              <div class="check-lbl">Pasa el test</div>
+              <div class="chk"><input type="checkbox" id="q3c1" onchange="autosave()"><label for="q3c1">Contiene un número específico (%, $, tiempo, cantidad)</label></div>
+              <div class="chk"><input type="checkbox" id="q3c2" onchange="autosave()"><label for="q3c2">Contiene una referencia clara de antes/después o mejora</label></div>
+              <div class="chk"><input type="checkbox" id="q3c3" onchange="autosave()"><label for="q3c3">NO puede aplicar a ninguna otra empresa o situación</label></div>
             </div>
           </div>
         </div>
@@ -371,7 +371,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
     <!-- 05 CHECKLIST -->
     <div class="section open" id="s-checklist">
       <div class="section-hdr" onclick="toggleSection('s-checklist')">
-        <div class="section-title"><span class="section-num">05</span>Publication Readiness Checklist</div>
+        <div class="section-title"><span class="section-num">05</span>Publication Preparación Checklist</div>
         <span class="chevron">▾</span>
       </div>
       <div class="section-body">
@@ -381,41 +381,41 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
             <div class="readiness-sub-lbl">complete</div>
           </div>
           <div class="readiness-right">
-            <div class="readiness-desc" id="r-desc">Fill out the checklist below to track publication readiness.</div>
+            <div class="readiness-desc" id="r-desc">Completa el checklist para seguir el estado de publicación.</div>
             <div class="r-track2"><div class="r-fill2" id="r-fill" style="width:0"></div></div>
           </div>
         </div>
 
         <div class="checklist">
-          <div class="check-row"><input type="checkbox" id="ch1" onchange="updateReadiness()">
-            <div class="check-row-text"><label class="check-row-label" for="ch1">Headline with a specific number, outcome, and timeframe</label>
-            <div class="check-row-desc">e.g. "Medellín real estate agency cut lead response time from 4h to 2min and increased deal close rate by 38% in 60 days."</div></div></div>
-          <div class="check-row"><input type="checkbox" id="ch2" onchange="updateReadiness()">
-            <div class="check-row-text"><label class="check-row-label" for="ch2">Named executive OR documented reason for anonymization</label>
-            <div class="check-row-desc">If anonymous: record the specific reason (legal, competitive, NDA). "Client requested" is not sufficient documentation.</div></div></div>
-          <div class="check-row"><input type="checkbox" id="ch3" onchange="updateReadiness()">
-            <div class="check-row-text"><label class="check-row-label" for="ch3">At least 3 before/after metrics with verified baselines</label>
-            <div class="check-row-desc">Every "after" number needs a "before." If the client can't provide the baseline, that metric cannot be published.</div></div></div>
-          <div class="check-row"><input type="checkbox" id="ch4" onchange="updateReadiness()">
-            <div class="check-row-text"><label class="check-row-label" for="ch4">At least 1 vertical-specific outcome metric</label>
-            <div class="check-row-desc">Real estate: lead conversion or response time. Banking/logistics: compliance outcome, error reduction, or reporting timeline.</div></div></div>
-          <div class="check-row"><input type="checkbox" id="ch5" onchange="updateReadiness()">
-            <div class="check-row-text"><label class="check-row-label" for="ch5">At least 1 non-obvious finding documented</label>
-            <div class="check-row-desc">Something unexpected. A secondary benefit. A metric that improved without being in scope. This is what makes the case study memorable.</div></div></div>
-          <div class="check-row"><input type="checkbox" id="ch6" onchange="updateReadiness()">
-            <div class="check-row-text"><label class="check-row-label" for="ch6">Client approval confirmed in writing</label>
-            <div class="check-row-desc">Email or signed approval. Screenshot saved to project folder. No verbal approvals count for publication purposes.</div></div></div>
-          <div class="check-row"><input type="checkbox" id="ch7" onchange="updateReadiness()">
-            <div class="check-row-text"><label class="check-row-label" for="ch7">One-page summary version ready</label>
-            <div class="check-row-desc">The PDF/slide that goes into proposals and decks. Must stand alone without the full case study. Different document entirely.</div></div></div>
+          <div class="check-row"><input type="checkbox" id="ch1" onchange="updatePreparación()">
+            <div class="check-row-text"><label class="check-row-label" for="ch1">Titular con número específico, resultado y plazo de tiempo</label>
+            <div class="check-row-desc">ej. "Agencia inmobiliaria de Medellín redujo tiempo de respuesta de 4h a 2min y aumentó tasa de cierre un 38% en 60 días."</div></div></div>
+          <div class="check-row"><input type="checkbox" id="ch2" onchange="updatePreparación()">
+            <div class="check-row-text"><label class="check-row-label" for="ch2">Ejecutivo nombrado O razón documentada de anonimización</label>
+            <div class="check-row-desc">Si es anónimo: registra el motivo específico (legal, competitivo, NDA). "El cliente lo solicitó" no es documentación suficiente.</div></div></div>
+          <div class="check-row"><input type="checkbox" id="ch3" onchange="updatePreparación()">
+            <div class="check-row-text"><label class="check-row-label" for="ch3">Al menos 3 métricas antes/después con líneas base verificadas</label>
+            <div class="check-row-desc">Cada número "después" necesita un "antes". Si el cliente no puede dar la línea base, esa métrica no se puede publicar.</div></div></div>
+          <div class="check-row"><input type="checkbox" id="ch4" onchange="updatePreparación()">
+            <div class="check-row-text"><label class="check-row-label" for="ch4">Al menos 1 métrica de resultado específica del vertical</label>
+            <div class="check-row-desc">Inmobiliaria: conversión de leads o tiempo de respuesta. Banca/logística: cumplimiento, reducción de errores o tiempo de reportería.</div></div></div>
+          <div class="check-row"><input type="checkbox" id="ch5" onchange="updatePreparación()">
+            <div class="check-row-text"><label class="check-row-label" for="ch5">Al menos 1 hallazgo no obvio documentado</label>
+            <div class="check-row-desc">Algo inesperado. Un beneficio secundario. Una métrica que mejoró sin estar en el alcance. Esto es lo que hace memorable el caso de éxito.</div></div></div>
+          <div class="check-row"><input type="checkbox" id="ch6" onchange="updatePreparación()">
+            <div class="check-row-text"><label class="check-row-label" for="ch6">Aprobación del cliente confirmada por escrito</label>
+            <div class="check-row-desc">Email o aprobación firmada. Captura guardada en la carpeta del proyecto. Las aprobaciones verbales no cuentan para publicación.</div></div></div>
+          <div class="check-row"><input type="checkbox" id="ch7" onchange="updatePreparación()">
+            <div class="check-row-text"><label class="check-row-label" for="ch7">Versión resumen de una página lista</label>
+            <div class="check-row-desc">El PDF/slide que va en propuestas y presentaciones. Debe funcionar solo sin el caso completo. Es un documento diferente.</div></div></div>
         </div>
 
         <div class="divider"></div>
         <div class="frow" style="margin-bottom:0">
-          <div class="field"><label>Non-obvious finding (describe it)</label>
-            <textarea id="nof-text" placeholder="What surprised the client? What improved without being in scope? What discovery changed our implementation approach?" oninput="autosave()" style="min-height:72px"></textarea></div>
-          <div class="field"><label>Publication blockers / notes</label>
-            <textarea id="pub-notes" placeholder="Anything blocking publication. Legal review status. Outstanding approvals. Pending dates." oninput="autosave()" style="min-height:60px"></textarea></div>
+          <div class="field"><label>Hallazgo no obvio (descríbelo)</label>
+            <textarea id="nof-text" placeholder="¿Qué sorprendió al cliente? ¿Qué mejoró sin estar en el alcance? ¿Qué descubrimiento cambió nuestro enfoque de implementación?" oninput="autosave()" style="min-height:72px"></textarea></div>
+          <div class="field"><label>Bloqueos de publicación / notas</label>
+            <textarea id="pub-notes" placeholder="Cualquier cosa que bloquee la publicación. Estado de revisión legal. Aprobaciones pendientes. Fechas por confirmar." oninput="autosave()" style="min-height:60px"></textarea></div>
         </div>
       </div>
     </div>
@@ -427,13 +427,13 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
 <div class="modal-overlay" id="modal">
   <div class="modal">
     <div class="modal-hdr">
-      <span class="modal-title">Export — Paste into case study template</span>
+      <span class="modal-title">Exportar — Pegar en template de caso de éxito</span>
       <button class="modal-close" onclick="closeModal()">×</button>
     </div>
     <div class="modal-body"><pre id="export-content"></pre></div>
     <div class="modal-footer">
-      <button class="btn" onclick="closeModal()">Close</button>
-      <button class="btn btn-accent" onclick="copyExport()">Copy to Clipboard</button>
+      <button class="btn" onclick="closeModal()">Cerrar</button>
+      <button class="btn btn-accent" onclick="copyExport()">Copiar al Portapapeles</button>
     </div>
   </div>
 </div>
@@ -443,66 +443,66 @@ var V = 're';
 
 var DATA = {
   re: {
-    label:'Real Estate', icon:'🏢', tagClass:'tag-re', vtabClass:'active-re',
+    label:'Inmobiliarias', icon:'🏢', tagClass:'tag-re', vtabClass:'active-re',
     questions:[
-      {id:'re1', text:'What was your average monthly lead volume before we started, and how were you tracking it?', meta:'Get the number. If they say "a lot," probe each channel separately: portals, social, referrals, website.'},
-      {id:'re2', text:'How long did it take from a lead coming in to first contact — on average, and in worst cases?', meta:'Target: hours or minutes. Ask about nights and weekends specifically — that\'s where the story lives.'},
-      {id:'re3', text:'What percentage of agent time was spent on lead triage and initial qualification vs. actual selling?', meta:'Often underestimated. Help them calculate: hours/day × number of agents × 5 days.'},
-      {id:'re4', text:'What was your close rate on qualified leads before implementation? And what is it now?', meta:'Most clients track this. If not, use: deals closed ÷ qualified appointments × 100.'},
-      {id:'re5', text:'How much were you spending on lead acquisition per month, and what % of those leads were actually qualified?', meta:'Unlocks CPL and cost-per-qualified-lead — the two most powerful numbers in the case study.'},
-      {id:'re6', text:'What happened to leads that came in outside business hours before? What happens now?', meta:'Nights and weekends are where deals are won or lost. This is the response time story.'},
-      {id:'re7', text:'What was the most unexpected benefit you experienced — something you didn\'t expect to improve?', meta:'Non-obvious finding. Don\'t skip this. The unexpected outcome is what makes the case study memorable.'},
+      {id:'re1', text:'¿Cuál era tu volumen mensual promedio de leads antes de empezar, y cómo lo estabas rastreando?', meta:'Obtén el número. Si dicen "muchos", indaga por canal: portales, redes, referidos, web.'},
+      {id:'re2', text:'¿Cuánto tiempo tardaba desde que entraba un lead hasta el primer contacto — en promedio y en el peor caso?', meta:'Objetivo: horas o minutos. Pregunta específicamente por noches y fines de semana — ahí está la historia.'},
+      {id:'re3', text:'¿Qué porcentaje del tiempo de los agentes se iba en clasificación de leads vs. vender realmente?', meta:'Suele subestimarse. Ayúdales a calcular: horas/día × número de agentes × 5 días.'},
+      {id:'re4', text:'¿Cuál era tu tasa de cierre sobre leads cualificados antes de la implementación? ¿Y ahora?', meta:'La mayoría lo rastrea. Si no: cierres ÷ citas cualificadas × 100.'},
+      {id:'re5', text:'¿Cuánto gastabas en adquisición de leads al mes y qué % de esos leads eran realmente cualificados?', meta:'Desbloquea el CPL y costo por lead cualificado — los dos números más poderosos del caso de éxito.'},
+      {id:'re6', text:'¿Qué pasaba con los leads que llegaban fuera del horario laboral antes? ¿Qué pasa ahora?', meta:'Las noches y fines de semana es donde se ganan o pierden los deals. Esta es la historia del tiempo de respuesta.'},
+      {id:'re7', text:'¿Cuál fue el beneficio más inesperado que experimentaron — algo que no esperaban que mejorara?', meta:'Hallazgo no obvio. No omitas esto. El resultado inesperado es lo que hace memorable el caso.'},
     ],
     metrics:[
-      {id:'mr1', label:'Avg. lead response time', unit:'hours / minutes'},
-      {id:'mr2', label:'Monthly qualified leads', unit:'count'},
-      {id:'mr3', label:'Close rate on qualified leads', unit:'%'},
-      {id:'mr4', label:'Agent hours/week on lead triage', unit:'hours'},
-      {id:'mr5', label:'Cost per qualified lead', unit:'USD'},
-      {id:'mr6', label:'After-hours leads converted', unit:'count/month'},
-      {id:'mr7', label:'Monthly commissions closed', unit:'USD'},
+      {id:'mr1', label:'Tiempo promedio de respuesta a leads', unit:'horas / minutos'},
+      {id:'mr2', label:'Leads cualificados por mes', unit:'cantidad'},
+      {id:'mr3', label:'Cerrar rate on qualified leads', unit:'%'},
+      {id:'mr4', label:'Horas/semana de agentes en clasificación', unit:'horas'},
+      {id:'mr5', label:'Costo por lead cualificado', unit:'USD'},
+      {id:'mr6', label:'Leads fuera de horario convertidos', unit:'cantidad/mes'},
+      {id:'mr7', label:'Comisiones cerradas al mes', unit:'USD'},
     ],
   },
   bank: {
-    label:'Banking & Financial Services', icon:'🏦', tagClass:'tag-bank', vtabClass:'active-bank',
+    label:'Banca y Servicios Financieros', icon:'🏦', tagClass:'tag-bank', vtabClass:'active-bank',
     questions:[
-      {id:'bk1', text:'How many people were involved in producing each compliance or regulatory report, and how long did it take end-to-end?', meta:'Get headcount AND hours. Then multiply: people × hours × salary rate = true production cost.'},
-      {id:'bk2', text:'How many regulatory findings or internal data discrepancies did you have per quarter before implementation?', meta:'Regulators track this. The client almost certainly has this number in their files.'},
-      {id:'bk3', text:'What was your month-end close duration, and what was the biggest bottleneck in that process?', meta:'In days, not "a few days." The bottleneck description becomes the story hook.'},
-      {id:'bk4', text:'What did error remediation actually cost — in staff hours, external review, or direct fines?', meta:'Use the $5,000/incident benchmark as a prompt: "Is that roughly right for your situation?"'},
-      {id:'bk5', text:'What percentage of your ops team\'s time was spent on data prep vs. actual analysis? What\'s that ratio now?', meta:'This is the Ops Cost Calculator story. Get the before percentage explicitly — don\'t let them estimate.'},
-      {id:'bk6', text:'Did you have any audit or regulatory review outcomes that were directly tied to the implementation?', meta:'A clean audit post-implementation is a powerful proof point. Ask directly — they may not volunteer it.'},
-      {id:'bk7', text:'What would have happened — in concrete terms — if you hadn\'t automated this when you did?', meta:'Gets the counterfactual. Often produces the most powerful quote in the entire case study.'},
+      {id:'bk1', text:'¿Cuántas personas participaban en producir cada reporte de cumplimiento o regulatorio, y cuánto tiempo tomaba de principio a fin?', meta:'Obtén personas Y horas. Luego multiplica: personas × horas × tarifa salarial = costo real de producción.'},
+      {id:'bk2', text:'¿Cuántos hallazgos regulatorios o discrepancias de datos internos tenían por trimestre antes de la implementación?', meta:'Los reguladores lo rastrean. El cliente casi seguro tiene este número en sus archivos.'},
+      {id:'bk3', text:'¿Cuánto duraba el cierre de mes y cuál era el mayor cuello de botella en ese proceso?', meta:'En días, no "unos pocos días". La descripción del cuello de botella se convierte en el gancho de la historia.'},
+      {id:'bk4', text:'¿Cuánto costó realmente la remediación de errores — en horas de personal, revisión externa o multas directas?', meta:'Usa el benchmark de $5,000/incidente como referencia: "¿Es eso más o menos correcto para tu situación?"'},
+      {id:'bk5', text:'¿Qué porcentaje del tiempo de tu equipo de ops se iba en preparación de datos vs. análisis real? ¿Cuál es esa proporción ahora?', meta:'Esta es la historia de la Calculadora de Costos Operativos. Obtén el porcentaje anterior explícitamente — no dejes que estimen.'},
+      {id:'bk6', text:'¿Tuvieron resultados de auditoría o revisión regulatoria directamente relacionados con la implementación?', meta:'Una auditoría limpia post-implementación es un argumento poderoso. Pregunta directamente — puede que no lo mencionen solos.'},
+      {id:'bk7', text:'¿Qué habría pasado — en términos concretos — si no hubieran automatizado esto cuando lo hicieron?', meta:'Obtiene el contrafactual. Suele producir la cita más poderosa de todo el caso de éxito.'},
     ],
     metrics:[
-      {id:'bm1', label:'Compliance report production time', unit:'days'},
-      {id:'bm2', label:'Regulatory findings per quarter', unit:'count'},
-      {id:'bm3', label:'Month-end close duration', unit:'days'},
-      {id:'bm4', label:'Ops team hours on data prep/week', unit:'hours'},
-      {id:'bm5', label:'Error remediation cost/month', unit:'USD'},
-      {id:'bm6', label:'% of analysts doing data prep vs. analysis', unit:'%'},
-      {id:'bm7', label:'Annual BI/reporting tool spend', unit:'USD'},
+      {id:'bm1', label:'Tiempo de producción de reporte de cumplimiento', unit:'días'},
+      {id:'bm2', label:'Hallazgos regulatorios por trimestre', unit:'cantidad'},
+      {id:'bm3', label:'Duración del cierre de mes', unit:'días'},
+      {id:'bm4', label:'Horas/semana del equipo de ops en preparación de datos', unit:'horas'},
+      {id:'bm5', label:'Costo de remediación de errores/mes', unit:'USD'},
+      {id:'bm6', label:'% de analistas en preparación de datos vs. análisis', unit:'%'},
+      {id:'bm7', label:'Gasto anual en herramientas BI/reportería', unit:'USD'},
     ],
   },
   log: {
-    label:'Logistics & Supply Chain', icon:'📦', tagClass:'tag-log', vtabClass:'active-log',
+    label:'Logística y Cadena de Suministro', icon:'📦', tagClass:'tag-log', vtabClass:'active-log',
     questions:[
-      {id:'lg1', text:'How fresh was the data in your weekly operational report? How often were decisions made on information more than 48h old?', meta:'Data freshness is the core pain point. Get a specific lag time in hours or days.'},
-      {id:'lg2', text:'What was your SLA compliance rate, and what was the main cause of misses?', meta:'Get the percentage AND the cause. The cause is the story: late data, manual errors, disconnected systems.'},
-      {id:'lg3', text:'What was your inventory accuracy rate, and how much shrinkage or write-off did you attribute to data errors?', meta:'If they can\'t give a %, ask for the dollar value of write-offs in the last 12 months.'},
-      {id:'lg4', text:'How many disconnected systems was your team pulling from to build a single operational view?', meta:'Count ERPs, spreadsheets, portals, carrier systems, email — all of it. The number is usually shocking.'},
-      {id:'lg5', text:'How many hours per week did your team spend just building and distributing the weekly report?', meta:'Multiply by salary. This is often the easiest number to monetize in the case study.'},
-      {id:'lg6', text:'What decisions were you unable to make in real time because of reporting lag? Give me a specific example.', meta:'The specific example is what goes in the case study. "We couldn\'t react quickly" won\'t land with prospects.'},
-      {id:'lg7', text:'What surprised you most about the implementation — technically or operationally?', meta:'Non-obvious finding. What changed that they didn\'t expect to change?'},
+      {id:'lg1', text:'¿Qué tan actualizada era la información en tu reporte operativo semanal? ¿Con qué frecuencia se tomaban decisiones con datos de más de 48h de antigüedad?', meta:'La frescura de datos es el dolor principal. Obtén un tiempo de retraso específico en horas o días.'},
+      {id:'lg2', text:'¿Cuál era tu tasa de cumplimiento de SLA y cuál era la causa principal de los incumplimientos?', meta:'Obtén el porcentaje Y la causa. La causa es la historia: datos tardíos, errores manuales, sistemas desconectados.'},
+      {id:'lg3', text:'¿Cuál era tu tasa de exactitud de inventario y cuánta merma o pérdida atribuías a errores de datos?', meta:'Si no pueden dar un %, pide el valor en dólares de las pérdidas en los últimos 12 meses.'},
+      {id:'lg4', text:'¿De cuántos sistemas desconectados extraía tu equipo datos para construir una sola vista operativa?', meta:'Cuenta ERPs, hojas de cálculo, portales, sistemas de transportistas, email — todo. El número suele ser impactante.'},
+      {id:'lg5', text:'¿Cuántas horas por semana dedicaba tu equipo solo a construir y distribuir el reporte semanal?', meta:'Multiplica por el salario. Suele ser el número más fácil de monetizar en el caso de éxito.'},
+      {id:'lg6', text:'¿Qué decisiones no podías tomar en tiempo real por el retraso en los reportes? Dame un ejemplo específico.', meta:'El ejemplo específico es lo que va en el caso de éxito. "No podíamos reaccionar rápido" no convence a prospectos.'},
+      {id:'lg7', text:'¿Qué te sorprendió más de la implementación — técnica u operativamente?', meta:'Hallazgo no obvio. ¿Qué cambió que no esperaban que cambiara?'},
     ],
     metrics:[
-      {id:'lm1', label:'Operational report data freshness', unit:'hours of lag'},
-      {id:'lm2', label:'SLA compliance rate', unit:'%'},
-      {id:'lm3', label:'Inventory accuracy rate', unit:'%'},
-      {id:'lm4', label:'Disconnected systems count', unit:'count'},
-      {id:'lm5', label:'Weekly reporting hours (team total)', unit:'hours'},
-      {id:'lm6', label:'Annual write-offs from data errors', unit:'USD'},
-      {id:'lm7', label:'Decision lag time (issue to response)', unit:'hours'},
+      {id:'lm1', label:'Actualidad de datos en reporte operativo', unit:'horas de retraso'},
+      {id:'lm2', label:'Tasa de cumplimiento de SLA', unit:'%'},
+      {id:'lm3', label:'Tasa de exactitud de inventario', unit:'%'},
+      {id:'lm4', label:'Cantidad de sistemas desconectados', unit:'cantidad'},
+      {id:'lm5', label:'Horas de reportería semanal (total equipo)', unit:'horas'},
+      {id:'lm6', label:'Pérdidas anuales por errores de datos', unit:'USD'},
+      {id:'lm7', label:'Tiempo de respuesta a decisiones (problema a acción)', unit:'horas'},
     ],
   },
 };
@@ -528,7 +528,7 @@ function renderQuestions(v) {
     html += '<div class="q-item">';
     html += '<div class="q-hdr"><span class="q-idx">Q'+(i+1)+'</span><div class="q-content"><div class="q-text">'+q.text+'</div>';
     if(q.meta) html += '<div class="q-meta">↳ '+q.meta+'</div>';
-    html += '</div></div><div class="q-body"><textarea id="ans-'+q.id+'" placeholder="Interview notes…" oninput="autosave()" rows="3"></textarea></div></div>';
+    html += '</div></div><div class="q-body"><textarea id="ans-'+q.id+'" placeholder="Notas de entrevista…" oninput="autosave()" rows="3"></textarea></div></div>';
   });
   document.getElementById('questions-body').innerHTML = html;
 }
@@ -554,7 +554,7 @@ function navTo(sectionId, navId) {
   document.getElementById(sectionId).scrollIntoView({behavior:'smooth', block:'start'});
 }
 
-function updateReadiness() {
+function updatePreparación() {
   var cbs = document.querySelectorAll('#s-checklist input[type=checkbox]');
   var total = cbs.length, done = 0;
   cbs.forEach(function(c) { if(c.checked) done++; });
@@ -564,11 +564,11 @@ function updateReadiness() {
   document.getElementById('r-fill').style.width = pctStr;
   document.getElementById('sb-pct').textContent = pctStr;
   document.getElementById('sb-bar').style.width = pctStr;
-  var descs = ['Fill out the checklist below to track publication readiness.',
-    'Getting started. Keep going.',
-    'Making progress — more than halfway.',
-    'Almost there. Check remaining items.',
-    'Ready for publication review.'];
+  var descs = ['Completa el checklist para seguir el estado de publicación.',
+    'Empezando. Sigue adelante.',
+    'Avanzando — más de la mitad.',
+    'Casi listo. Revisa los pendientes.',
+    'Listo para revisión de publicación.'];
   document.getElementById('r-desc').textContent = pct === 100 ? descs[4] : pct >= 70 ? descs[3] : pct >= 50 ? descs[2] : pct >= 20 ? descs[1] : descs[0];
 }
 
@@ -586,45 +586,45 @@ function exportSummary() {
   var lines = [];
 
   lines.push('═══════════════════════════════════════════════════════════');
-  lines.push('  CASE STUDY SUMMARY — ' + d.label.toUpperCase());
-  lines.push('  Generated: ' + new Date().toLocaleString());
+  lines.push('  RESUMEN CASO DE ÉXITO — ' + d.label.toUpperCase());
+  lines.push('  Generado: ' + new Date().toLocaleString());
   lines.push('═══════════════════════════════════════════════════════════\n');
 
-  lines.push('CLIENT INFORMATION');
+  lines.push('INFORMACIÓN DEL CLIENTE');
   lines.push('──────────────────────────────────────────────────────────');
-  lines.push('Company:         ' + (val('c-company') || '—'));
+  lines.push('Empresa:         ' + (val('c-company') || '—'));
   lines.push('Vertical:        ' + d.label);
-  lines.push('Contact:         ' + (val('c-contact') || '—') + (val('c-ctitle') ? ' · ' + val('c-ctitle') : ''));
-  lines.push('Interview date:  ' + (val('c-date') || '—'));
-  lines.push('Interviewer:     ' + (val('c-interviewer') || '—'));
-  lines.push('Confidentiality: ' + (confText || '—'));
+  lines.push('Contacto:        ' + (val('c-contact') || '—') + (val('c-ctitle') ? ' · ' + val('c-ctitle') : ''));
+  lines.push('Fecha entrevista: ' + (val('c-date') || '—'));
+  lines.push('Entrevistador:   ' + (val('c-interviewer') || '—'));
+  lines.push('Confidencialidad: ' + (confText || '—'));
   lines.push('');
 
-  lines.push('INTERVIEW ANSWERS');
+  lines.push('RESPUESTAS DE ENTREVISTA');
   lines.push('──────────────────────────────────────────────────────────');
   d.questions.forEach(function(q, i) {
     var ans = val('ans-' + q.id);
     lines.push('Q' + (i+1) + ': ' + q.text);
-    lines.push('A:  ' + (ans || '[No answer recorded]'));
+    lines.push('A:  ' + (ans || '[Sin respuesta registrada]'));
     lines.push('');
   });
 
-  lines.push('BEFORE / AFTER METRICS');
+  lines.push('MÉTRICAS ANTES / DESPUÉS');
   lines.push('──────────────────────────────────────────────────────────');
   d.metrics.forEach(function(m) {
     var before = val('mb-' + m.id);
     var after = val('ma-' + m.id);
     var hasData = before || after;
     lines.push(m.label + ' (' + m.unit + ')');
-    lines.push('  Before: ' + (before || '—') + '   →   After: ' + (after || '—') + (!hasData ? '   [NOT FILLED]' : ''));
+    lines.push('  Antes:   ' + (before || '—') + '  →  Después: ' + (after || '—') + (!hasData ? '   [SIN COMPLETAR]' : ''));
   });
   lines.push('');
 
-  lines.push('QUOTES');
+  lines.push('CITAS');
   lines.push('──────────────────────────────────────────────────────────');
-  [{role:'Executive Sponsor [REQUIRED]', n:'q1-name', t:'q1-title', co:'q1-co', txt:'q1-text', c:['q1c1','q1c2','q1c3']},
-   {role:'Technical Lead [REQUIRED]',    n:'q2-name', t:'q2-title', co:'q2-co', txt:'q2-text', c:['q2c1','q2c2','q2c3']},
-   {role:'Operational Stakeholder [OPTIONAL]', n:'q3-name', t:'q3-title', co:'q3-co', txt:'q3-text', c:['q3c1','q3c2','q3c3']},
+  [{role:'Sponsor Ejecutivo [REQUERIDA]', n:'q1-name', t:'q1-title', co:'q1-co', txt:'q1-text', c:['q1c1','q1c2','q1c3']},
+   {role:'Líder Técnico [REQUERIDA]',    n:'q2-name', t:'q2-title', co:'q2-co', txt:'q2-text', c:['q2c1','q2c2','q2c3']},
+   {role:'Responsable Operativo [OPCIONAL]', n:'q3-name', t:'q3-title', co:'q3-co', txt:'q3-text', c:['q3c1','q3c2','q3c3']},
   ].forEach(function(q) {
     var qtext = val(q.txt);
     lines.push('[' + q.role + ']');
@@ -632,28 +632,28 @@ function exportSummary() {
       lines.push('"' + qtext + '"');
       lines.push('— ' + (val(q.n) || '—') + ', ' + (val(q.t) || '—') + ' · ' + (val(q.co) || '—'));
       var c = q.c.map(function(id){ var el=document.getElementById(id); return (el&&el.checked)?'✓':'✗'; });
-      lines.push('Test checks: Has number ' + c[0] + '  Before/after ' + c[1] + '  Unique ' + c[2]);
+      lines.push('Checks: Tiene número ' + c[0] + '  Antes/después ' + c[1] + '  Única ' + c[2]);
     } else {
-      lines.push('[No quote recorded]');
+      lines.push('[Sin cita registrada]');
     }
     lines.push('');
   });
 
-  lines.push('NON-OBVIOUS FINDING');
+  lines.push('HALLAZGO NO OBVIO');
   lines.push('──────────────────────────────────────────────────────────');
-  lines.push(val('nof-text') || '[Not captured]');
+  lines.push(val('nof-text') || '[No capturado]');
   lines.push('');
 
-  lines.push('PUBLICATION CHECKLIST');
+  lines.push('CHECKLIST DE PUBLICACIÓN');
   lines.push('──────────────────────────────────────────────────────────');
   var labels = [
-    'Headline with number, outcome, timeframe',
-    'Named exec OR documented anonymization reason',
-    '3+ before/after metrics with baselines',
-    '1+ vertical-specific outcome metric',
-    '1+ non-obvious finding documented',
-    'Client approval confirmed in writing',
-    'One-page summary version ready',
+    'Titular con número, resultado y plazo',
+    'Ejecutivo nombrado O razón de anonimización documentada',
+    '3+ métricas antes/después con líneas base',
+    '1+ métrica de resultado específica del vertical',
+    '1+ hallazgo no obvio documentado',
+    'Aprobación del cliente confirmada por escrito',
+    'Versión resumen de una página lista',
   ];
   var done = 0;
   for (var i=1; i<=7; i++) {
@@ -663,11 +663,11 @@ function exportSummary() {
     lines.push((checked?'✓':'✗') + '  ' + labels[i-1]);
   }
   lines.push('');
-  lines.push('Readiness: ' + done + '/7 (' + Math.round(done/7*100) + '%)');
+  lines.push('Preparación: ' + done + '/7 (' + Math.round(done/7*100) + '%)');
 
   if (val('pub-notes')) {
     lines.push('');
-    lines.push('NOTES / BLOCKERS');
+    lines.push('NOTAS / BLOQUEOS');
     lines.push('──────────────────────────────────────────────────────────');
     lines.push(val('pub-notes'));
   }
@@ -685,23 +685,23 @@ function copyExport() {
   navigator.clipboard.writeText(document.getElementById('export-content').textContent).then(function() {
     var btn = event.target;
     var orig = btn.textContent;
-    btn.textContent = '✓ Copied';
+    btn.textContent = '✓ Copiado';
     setTimeout(function(){ btn.textContent = orig; }, 2000);
   });
 }
 
 function clearAll() {
-  if (!confirm('Clear all fields? This cannot be undone.')) return;
+  if (!confirm('Limpiar todo fields? This cannot be undone.')) return;
   document.querySelectorAll('input[type=text],input[type=date],textarea').forEach(function(el){ if(!el.readOnly) el.value=''; });
   document.querySelectorAll('input[type=checkbox]').forEach(function(el){ el.checked=false; });
   document.querySelectorAll('select').forEach(function(el){ el.selectedIndex=0; });
-  updateReadiness();
+  updatePreparación();
 }
 
 document.getElementById('modal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
 
 setVertical('re');
-updateReadiness();
+updatePreparación();
 </script>
 </body>
 </html>
