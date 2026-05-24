@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +29,7 @@
   --bank-color: #4ABFA3;
   --log-color: #a78bfa;
   --radius: 8px;
-  --font-mono: 'Geist Mono', monospace;
+  --mono: 'Geist Mono', monospace;
   --font: 'Geist', sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,12 +39,11 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
 
-/* HEADER */
 .header { border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 52px; position: sticky; top: 0; z-index: 100; background: rgba(15,17,23,0.96); backdrop-filter: blur(8px); }
 .header-left { display: flex; align-items: center; gap: 14px; }
-.header-brand { font-family: var(--font-mono); font-size: 13px; color: var(--text2); }
+.header-brand { font-family: var(--mono); font-size: 13px; color: var(--text2); }
 .header-brand span { color: var(--accent); }
-.header-badge { font-family: var(--font-mono); font-size: 10px; background: var(--surface3); border: 1px solid var(--border); color: var(--text3); padding: 2px 7px; border-radius: 4px; letter-spacing: .08em; text-transform: uppercase; }
+.header-badge { font-family: var(--mono); font-size: 10px; background: var(--surface3); border: 1px solid var(--border); color: var(--text3); padding: 2px 7px; border-radius: 4px; letter-spacing: .08em; text-transform: uppercase; }
 .header-actions { display: flex; gap: 8px; }
 .btn { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 6px; font-size: 12px; font-weight: 500; cursor: pointer; font-family: var(--font); border: 1px solid var(--border); background: var(--surface2); color: var(--text2); transition: all .12s; }
 .btn:hover { border-color: var(--border2); color: var(--text); }
@@ -52,7 +51,6 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
 .btn-accent:hover { background: var(--accent2); border-color: var(--accent2); color: #0f1117; }
 .btn svg { width: 13px; height: 13px; flex-shrink: 0; }
 
-/* VERTICAL BAR */
 .vertical-bar { border-bottom: 1px solid var(--border); padding: 0 28px; display: flex; background: var(--surface); }
 .vtab { padding: 12px 18px; font-size: 13px; font-weight: 500; color: var(--text3); cursor: pointer; border-bottom: 2px solid transparent; transition: all .12s; display: flex; align-items: center; gap: 7px; white-space: nowrap; }
 .vtab:hover { color: var(--text2); background: rgba(255,255,255,.02); }
@@ -60,13 +58,11 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
 .vtab.active-bank { color: var(--bank-color); border-bottom-color: var(--bank-color); }
 .vtab.active-log { color: var(--log-color); border-bottom-color: var(--log-color); }
 
-/* LAYOUT */
 .layout { display: grid; grid-template-columns: 200px 1fr; min-height: calc(100vh - 101px); }
 
-/* SIDEBAR */
 .sidebar { border-right: 1px solid var(--border); padding: 16px 0; position: sticky; top: 101px; height: calc(100vh - 101px); overflow-y: auto; }
 .sidebar-section { margin-bottom: 6px; }
-.sidebar-lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--text3); padding: 0 14px; margin-bottom: 3px; }
+.sidebar-lbl { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--text3); padding: 0 14px; margin-bottom: 3px; }
 .sidebar-item { display: flex; align-items: center; gap: 8px; padding: 6px 14px; font-size: 12px; color: var(--text3); cursor: pointer; transition: all .1s; border-left: 2px solid transparent; user-select: none; }
 .sidebar-item:hover { color: var(--text2); background: var(--surface); }
 .sidebar-item.active { color: var(--text); background: rgba(74,191,163,.07); border-left-color: var(--accent); }
@@ -74,32 +70,29 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
 .sidebar-item.active .s-dot { background: var(--accent); }
 .sidebar-divider { border: none; border-top: 1px solid var(--border); margin: 10px 0; }
 .readiness-block { padding: 12px 14px; }
-.readiness-num { font-family: var(--font-mono); font-size: 24px; font-weight: 600; color: var(--accent); line-height: 1; }
+.readiness-num { font-family: var(--mono); font-size: 24px; font-weight: 600; color: var(--accent); line-height: 1; }
 .readiness-sub { font-size: 11px; color: var(--text3); margin-top: 2px; margin-bottom: 8px; }
 .r-track { height: 3px; background: var(--surface3); border-radius: 2px; overflow: hidden; }
 .r-fill { height: 3px; background: var(--accent); border-radius: 2px; transition: width .35s ease; }
 
-/* MAIN */
 .main { padding: 28px 32px; max-width: 860px; }
 
-/* SECTIONS */
 .section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 16px; overflow: hidden; }
 .section-hdr { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid transparent; cursor: pointer; user-select: none; transition: background .1s; }
 .section.open .section-hdr { border-bottom-color: var(--border); }
 .section-hdr:hover { background: var(--surface2); }
 .section-title { display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 600; color: var(--text); }
-.section-num { font-family: var(--font-mono); font-size: 10px; color: var(--text3); background: var(--surface3); border: 1px solid var(--border); padding: 2px 7px; border-radius: 4px; }
+.section-num { font-family: var(--mono); font-size: 10px; color: var(--text3); background: var(--surface3); border: 1px solid var(--border); padding: 2px 7px; border-radius: 4px; }
 .chevron { color: var(--text3); font-size: 10px; transition: transform .18s; }
 .section.open .chevron { transform: rotate(180deg); }
 .section-body { padding: 18px; display: none; }
 .section.open .section-body { display: block; }
 
-/* FIELDS */
 .frow { display: grid; gap: 10px; margin-bottom: 10px; }
 .frow.c2 { grid-template-columns: 1fr 1fr; }
 .frow.c3 { grid-template-columns: 1fr 1fr 1fr; }
 .field { display: flex; flex-direction: column; gap: 4px; }
-.field label { font-family: var(--font-mono); font-size: 10px; color: var(--text3); letter-spacing: .06em; text-transform: uppercase; }
+.field label { font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: .06em; text-transform: uppercase; }
 .field input, .field select, .field textarea { background: var(--surface3); border: 1px solid var(--border); border-radius: 6px; padding: 7px 10px; font-size: 13px; color: var(--text); font-family: var(--font); outline: none; transition: border-color .12s; width: 100%; resize: vertical; }
 .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); }
 .field input::placeholder, .field textarea::placeholder { color: var(--text3); }
@@ -107,11 +100,9 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
 .field select option { background: var(--surface3); color: var(--text); }
 .field textarea { min-height: 72px; line-height: 1.5; }
 
-/* QUESTION ITEMS */
 .q-item { border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-bottom: 8px; }
 .q-hdr { padding: 10px 13px; background: var(--surface2); display: flex; align-items: flex-start; gap: 9px; }
-.q-idx { font-family: var(--font-mono); font-size: 11px; color: var(--accent); min-width: 22px; flex-shrink: 0; padding-top: 1px; }
-.q-content {}
+.q-idx { font-family: var(--mono); font-size: 11px; color: var(--accent); min-width: 22px; flex-shrink: 0; padding-top: 1px; }
 .q-text { font-size: 13px; color: var(--text); font-weight: 500; line-height: 1.45; }
 .q-meta { font-size: 11px; color: var(--text3); margin-top: 3px; line-height: 1.4; }
 .q-body { padding: 8px 13px; }
@@ -119,53 +110,47 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
 .q-body textarea:focus { border-color: var(--accent); }
 .q-body textarea::placeholder { color: var(--text3); }
 
-/* METRICS TABLE */
 .mtable { width: 100%; border-collapse: collapse; font-size: 13px; }
-.mtable th { font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--text3); padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+.mtable th { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--text3); padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--border); }
 .mtable td { padding: 6px 6px; border-bottom: 1px solid rgba(48,54,61,.5); vertical-align: middle; }
 .mtable tr:last-child td { border-bottom: none; }
 .mtable td:first-child { padding-left: 10px; }
 .m-label { font-size: 12px; color: var(--text2); line-height: 1.35; }
-.m-unit { font-family: var(--font-mono); font-size: 10px; color: var(--text3); margin-top: 1px; }
-.mtable input { background: var(--surface3); border: 1px solid var(--border); border-radius: 5px; padding: 5px 9px; font-size: 12px; color: var(--text); font-family: var(--font-mono); outline: none; width: 100%; transition: border-color .12s; }
+.m-unit { font-family: var(--mono); font-size: 10px; color: var(--text3); margin-top: 1px; }
+.mtable input { background: var(--surface3); border: 1px solid var(--border); border-radius: 5px; padding: 5px 9px; font-size: 12px; color: var(--text); font-family: var(--mono); outline: none; width: 100%; transition: border-color .12s; }
 .mtable input:focus { border-color: var(--accent); }
 .mtable input::placeholder { color: var(--text3); }
 .col-before { background: rgba(248,81,73,.03); }
 .col-after { background: rgba(63,185,80,.03); }
 
-/* QUOTE BLOCKS */
 .q-block { border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-bottom: 10px; }
 .q-block-hdr { padding: 9px 14px; background: var(--surface2); font-size: 12px; font-weight: 600; color: var(--text2); display: flex; align-items: center; justify-content: space-between; }
-.badge { font-family: var(--font-mono); font-size: 10px; padding: 2px 7px; border-radius: 4px; letter-spacing: .04em; }
+.badge { font-family: var(--mono); font-size: 10px; padding: 2px 7px; border-radius: 4px; letter-spacing: .04em; }
 .badge-req { background: var(--red-dim); color: var(--red); border: 1px solid rgba(248,81,73,.2); }
 .badge-opt { background: var(--surface3); color: var(--text3); border: 1px solid var(--border); }
 .q-block-body { padding: 13px; }
 .quote-checks { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 5px; }
-.check-lbl { font-family: var(--font-mono); font-size: 10px; color: var(--text3); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 3px; }
+.check-lbl { font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 3px; }
 .chk { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--text2); }
 .chk input[type=checkbox] { width: 13px; height: 13px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
 .chk label { cursor: pointer; }
 
-/* CHECKLIST */
 .checklist { display: flex; flex-direction: column; gap: 7px; }
 .check-row { display: flex; align-items: flex-start; gap: 9px; padding: 10px 12px; background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; transition: all .12s; }
 .check-row:has(input:checked) { border-color: var(--accent-border); background: var(--accent-dim); }
 .check-row input[type=checkbox] { width: 14px; height: 14px; accent-color: var(--accent); cursor: pointer; margin-top: 3px; flex-shrink: 0; }
-.check-row-text {}
 .check-row-label { font-size: 13px; color: var(--text); font-weight: 500; cursor: pointer; display: block; line-height: 1.3; }
 .check-row-desc { font-size: 11px; color: var(--text3); margin-top: 3px; line-height: 1.45; }
 
-/* READINESS BAR */
 .readiness-wrap { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 20px; }
 .readiness-left { text-align: center; min-width: 60px; }
-.readiness-big { font-family: var(--font-mono); font-size: 28px; font-weight: 600; color: var(--accent); line-height: 1; }
+.readiness-big { font-family: var(--mono); font-size: 28px; font-weight: 600; color: var(--accent); line-height: 1; }
 .readiness-sub-lbl { font-size: 10px; color: var(--text3); margin-top: 3px; }
 .readiness-right { flex: 1; }
 .readiness-desc { font-size: 12px; color: var(--text2); margin-bottom: 8px; }
 .r-track2 { height: 4px; background: var(--surface3); border-radius: 2px; overflow: hidden; }
 .r-fill2 { height: 4px; background: var(--accent); border-radius: 2px; transition: width .35s ease; }
 
-/* MODAL */
 .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.72); z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px; }
 .modal-overlay.show { display: flex; }
 .modal { background: var(--surface); border: 1px solid var(--border2); border-radius: 10px; width: 100%; max-width: 700px; max-height: 82vh; display: flex; flex-direction: column; }
@@ -174,11 +159,10 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
 .modal-close { background: none; border: none; color: var(--text3); cursor: pointer; font-size: 20px; line-height: 1; padding: 0 2px; transition: color .1s; }
 .modal-close:hover { color: var(--text); }
 .modal-body { padding: 18px; overflow-y: auto; flex: 1; }
-.modal-body pre { font-family: var(--font-mono); font-size: 11.5px; color: var(--text2); line-height: 1.75; white-space: pre-wrap; word-break: break-word; }
+.modal-body pre { font-family: var(--mono); font-size: 11.5px; color: var(--text2); line-height: 1.75; white-space: pre-wrap; word-break: break-word; }
 .modal-footer { padding: 12px 18px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 8px; }
 
-/* TAGS */
-.tag { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-mono); font-size: 10px; padding: 2px 7px; border-radius: 4px; }
+.tag { display: inline-flex; align-items: center; gap: 4px; font-family: var(--mono); font-size: 10px; padding: 2px 7px; border-radius: 4px; }
 .tag-re { background: rgba(249,115,22,.1); color: var(--re-color); border: 1px solid rgba(249,115,22,.18); }
 .tag-bank { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-border); }
 .tag-log { background: rgba(167,139,250,.1); color: var(--log-color); border: 1px solid rgba(167,139,250,.18); }
@@ -214,7 +198,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
 </header>
 
 <div class="vertical-bar">
-  <div class="vtab active-re" id="vtab-re" onclick="setVertical('re')">🏢 Inmobiliarias</div>
+  <div class="vtab active-re" id="vtab-re" onclick="setVertical('re')">🏢 Inmobiliaria</div>
   <div class="vtab" id="vtab-bank" onclick="setVertical('bank')">🏦 Banca y Servicios Financieros</div>
   <div class="vtab" id="vtab-log" onclick="setVertical('log')">📦 Logística y Cadena de Suministro</div>
 </div>
@@ -223,7 +207,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
   <nav class="sidebar">
     <div class="sidebar-section">
       <div class="sidebar-lbl">Secciones</div>
-      <div class="sidebar-item active" id="nav-client" onclick="navTo('s-client','nav-client')"><span class="s-dot"></span>Info del Cliente</div>
+      <div class="sidebar-item active" id="nav-client" onclick="navTo('s-client','nav-client')"><span class="s-dot"></span>Datos del Cliente</div>
       <div class="sidebar-item" id="nav-questions" onclick="navTo('s-questions','nav-questions')"><span class="s-dot"></span>Preguntas de Entrevista</div>
       <div class="sidebar-item" id="nav-metrics" onclick="navTo('s-metrics','nav-metrics')"><span class="s-dot"></span>Métricas Antes / Después</div>
       <div class="sidebar-item" id="nav-quotes" onclick="navTo('s-quotes','nav-quotes')"><span class="s-dot"></span>Citas</div>
@@ -231,7 +215,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
     </div>
     <hr class="sidebar-divider">
     <div class="sidebar-section">
-      <div class="sidebar-lbl">Preparación</div>
+      <div class="sidebar-lbl">Progreso</div>
       <div class="readiness-block">
         <div class="readiness-num" id="sb-pct">0%</div>
         <div class="readiness-sub" style="font-size:11px;color:var(--text3);margin-top:2px;margin-bottom:8px">checklist completo</div>
@@ -242,29 +226,29 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
 
   <main class="main">
 
-    <!-- 01 CLIENT INFO -->
+    <!-- 01 -->
     <div class="section open" id="s-client">
       <div class="section-hdr" onclick="toggleSection('s-client')">
-        <div class="section-title"><span class="section-num">01</span>Info del Clientermation</div>
+        <div class="section-title"><span class="section-num">01</span>Datos del Cliente</div>
         <span class="chevron">▾</span>
       </div>
       <div class="section-body">
         <div class="frow c2">
-          <div class="field"><label>Nombre de la Empresa</label><input type="text" id="c-company" placeholder="ej. Grupo Inmobiliario Atlántico" oninput="autosave()"></div>
-          <div class="field"><label>Vertical</label><input type="text" id="c-vertical" readonly style="color:var(--text3)"></div>
+          <div class="field"><label>Nombre de la Empresa</label><input type="text" id="c-company" placeholder="ej. Grupo Inmobiliario Atlántico"></div>
+          <div class="field"><label>Vertical de Industria</label><input type="text" id="c-vertical" readonly style="color:var(--text3)"></div>
         </div>
         <div class="frow c2">
-          <div class="field"><label>Nombre del Contacto</label><input type="text" id="c-contact" placeholder="Nombre completo" oninput="autosave()"></div>
-          <div class="field"><label>Cargo del Contacto</label><input type="text" id="c-ctitle" placeholder="ej. COO, Director de Operaciones" oninput="autosave()"></div>
+          <div class="field"><label>Nombre del Contacto</label><input type="text" id="c-contact" placeholder="Nombre completo"></div>
+          <div class="field"><label>Cargo del Contacto</label><input type="text" id="c-ctitle" placeholder="ej. COO, Director de Operaciones"></div>
         </div>
         <div class="frow c3">
-          <div class="field"><label>Fecha de Entrevista</label><input type="date" id="c-date" oninput="autosave()"></div>
-          <div class="field"><label>Entrevistador</label><input type="text" id="c-interviewer" placeholder="Miembro del equipo" oninput="autosave()"></div>
+          <div class="field"><label>Fecha de Entrevista</label><input type="date" id="c-date"></div>
+          <div class="field"><label>Entrevistador</label><input type="text" id="c-interviewer" placeholder="Nombre del integrante del equipo"></div>
           <div class="field"><label>Nivel de Confidencialidad</label>
-            <select id="c-conf" onchange="autosave()">
+            <select id="c-conf">
               <option value="">Seleccionar</option>
               <option value="full">Nombre completo aprobado para publicación</option>
-              <option value="sector">Anonimización por sector únicamente</option>
+              <option value="sector">Anonimización solo por sector</option>
               <option value="anon">Totalmente confidencial — solo interno</option>
             </select>
           </div>
@@ -272,26 +256,26 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
       </div>
     </div>
 
-    <!-- 02 INTERVIEW QUESTIONS -->
+    <!-- 02 -->
     <div class="section open" id="s-questions">
       <div class="section-hdr" onclick="toggleSection('s-questions')">
         <div class="section-title">
           <span class="section-num">02</span>Preguntas de Entrevista
-          <span class="tag tag-re" id="q-vtag">🏢 Inmobiliarias</span>
+          <span class="tag tag-re" id="q-vtag">🏢 Inmobiliaria</span>
         </div>
         <span class="chevron">▾</span>
       </div>
       <div class="section-body" id="questions-body"></div>
     </div>
 
-    <!-- 03 METRICS -->
+    <!-- 03 -->
     <div class="section open" id="s-metrics">
       <div class="section-hdr" onclick="toggleSection('s-metrics')">
         <div class="section-title"><span class="section-num">03</span>Métricas Antes / Después</div>
         <span class="chevron">▾</span>
       </div>
       <div class="section-body">
-        <div class="help" style="margin-bottom:14px">Completa ambas columnas. Cada número "Después" requiere una línea base "Antes" para publicación. Mínimo 3 filas completas.</div>
+        <div class="help" style="margin-bottom:14px">Completa ambas columnas. Cada número "Después" requiere una línea base "Antes" para estar listo para publicación. Mínimo 3 filas completas requeridas.</div>
         <table class="mtable">
           <thead><tr>
             <th style="width:42%">Métrica</th>
@@ -303,29 +287,29 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
       </div>
     </div>
 
-    <!-- 04 QUOTES -->
+    <!-- 04 -->
     <div class="section open" id="s-quotes">
       <div class="section-hdr" onclick="toggleSection('s-quotes')">
         <div class="section-title"><span class="section-num">04</span>Captura de Citas</div>
         <span class="chevron">▾</span>
       </div>
       <div class="section-body">
-        <div class="help" style="margin-bottom:14px">Los 3 checks deben estar marcados para que una cita sea apta para publicación. Una cita que aplique a cualquier empresa no es utilizable.</div>
+        <div class="help" style="margin-bottom:14px">Los 3 checks deben estar marcados antes de que una cita esté lista para publicación. Una cita que podría aplicar a cualquier empresa no es usable.</div>
 
         <div class="q-block">
           <div class="q-block-hdr">Cita del Sponsor Ejecutivo <span class="badge badge-req">Requerida</span></div>
           <div class="q-block-body">
             <div class="frow c3" style="margin-bottom:9px">
-              <div class="field"><label>Name</label><input type="text" id="q1-name" placeholder="Nombre completo" oninput="autosave()"></div>
-              <div class="field"><label>Cargo</label><input type="text" id="q1-title" placeholder="C-level / VP" oninput="autosave()"></div>
-              <div class="field"><label>Empresa</label><input type="text" id="q1-co" placeholder="Company" oninput="autosave()"></div>
+              <div class="field"><label>Nombre</label><input type="text" id="q1-name" placeholder="Nombre completo"></div>
+              <div class="field"><label>Cargo</label><input type="text" id="q1-title" placeholder="C-level / VP / Director"></div>
+              <div class="field"><label>Empresa</label><input type="text" id="q1-co" placeholder="Empresa"></div>
             </div>
-            <div class="field"><label>Cita — textual</label><textarea id="q1-text" placeholder="Captura las palabras exactas. Corrige gramática solo con aprobación del cliente. No parafrasear." oninput="autosave()"></textarea></div>
+            <div class="field"><label>Cita — textual</label><textarea id="q1-text" placeholder="Captura las palabras exactas. Corrige gramática solo con aprobación del cliente. No parafrasees."></textarea></div>
             <div class="quote-checks">
-              <div class="check-lbl">Pasa el test</div>
-              <div class="chk"><input type="checkbox" id="q1c1" onchange="autosave()"><label for="q1c1">Contiene un número específico (%, $, tiempo, cantidad)</label></div>
-              <div class="chk"><input type="checkbox" id="q1c2" onchange="autosave()"><label for="q1c2">Contiene una referencia clara de antes/después o mejora</label></div>
-              <div class="chk"><input type="checkbox" id="q1c3" onchange="autosave()"><label for="q1c3">NO puede aplicar a ninguna otra empresa o situación</label></div>
+              <div class="check-lbl">Pasa el filtro</div>
+              <div class="chk"><input type="checkbox" id="q1c1" onchange="updateReadiness()"><label for="q1c1">Contiene un número específico (%, $, tiempo, cantidad)</label></div>
+              <div class="chk"><input type="checkbox" id="q1c2" onchange="updateReadiness()"><label for="q1c2">Contiene una referencia clara de antes/después o mejora</label></div>
+              <div class="chk"><input type="checkbox" id="q1c3" onchange="updateReadiness()"><label for="q1c3">NO podría aplicar a ninguna otra empresa o situación</label></div>
             </div>
           </div>
         </div>
@@ -334,16 +318,16 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
           <div class="q-block-hdr">Cita del Líder Técnico <span class="badge badge-req">Requerida</span></div>
           <div class="q-block-body">
             <div class="frow c3" style="margin-bottom:9px">
-              <div class="field"><label>Name</label><input type="text" id="q2-name" placeholder="Nombre completo" oninput="autosave()"></div>
-              <div class="field"><label>Cargo</label><input type="text" id="q2-title" placeholder="ej. Director de TI, CTO" oninput="autosave()"></div>
-              <div class="field"><label>Empresa</label><input type="text" id="q2-co" placeholder="Company" oninput="autosave()"></div>
+              <div class="field"><label>Nombre</label><input type="text" id="q2-name" placeholder="Nombre completo"></div>
+              <div class="field"><label>Cargo</label><input type="text" id="q2-title" placeholder="ej. Director de TI, CTO"></div>
+              <div class="field"><label>Empresa</label><input type="text" id="q2-co" placeholder="Empresa"></div>
             </div>
-            <div class="field"><label>Cita — textual</label><textarea id="q2-text" placeholder="Enfócate en la experiencia de implementación, calidad de integración y resultado técnico." oninput="autosave()"></textarea></div>
+            <div class="field"><label>Cita — textual</label><textarea id="q2-text" placeholder="Enfócate en la experiencia de implementación, calidad de integración y resultado técnico."></textarea></div>
             <div class="quote-checks">
-              <div class="check-lbl">Pasa el test</div>
-              <div class="chk"><input type="checkbox" id="q2c1" onchange="autosave()"><label for="q2c1">Contiene un número específico (%, $, tiempo, cantidad)</label></div>
-              <div class="chk"><input type="checkbox" id="q2c2" onchange="autosave()"><label for="q2c2">Contiene una referencia clara de antes/después o mejora</label></div>
-              <div class="chk"><input type="checkbox" id="q2c3" onchange="autosave()"><label for="q2c3">NO puede aplicar a ninguna otra empresa o situación</label></div>
+              <div class="check-lbl">Pasa el filtro</div>
+              <div class="chk"><input type="checkbox" id="q2c1" onchange="updateReadiness()"><label for="q2c1">Contiene un número específico (%, $, tiempo, cantidad)</label></div>
+              <div class="chk"><input type="checkbox" id="q2c2" onchange="updateReadiness()"><label for="q2c2">Contiene una referencia clara de antes/después o mejora</label></div>
+              <div class="chk"><input type="checkbox" id="q2c3" onchange="updateReadiness()"><label for="q2c3">NO podría aplicar a ninguna otra empresa o situación</label></div>
             </div>
           </div>
         </div>
@@ -352,70 +336,76 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
           <div class="q-block-hdr">Cita del Responsable Operativo <span class="badge badge-opt">Opcional</span></div>
           <div class="q-block-body">
             <div class="frow c3" style="margin-bottom:9px">
-              <div class="field"><label>Name</label><input type="text" id="q3-name" placeholder="Nombre completo" oninput="autosave()"></div>
-              <div class="field"><label>Cargo</label><input type="text" id="q3-title" placeholder="ej. Gerente de Operaciones" oninput="autosave()"></div>
-              <div class="field"><label>Empresa</label><input type="text" id="q3-co" placeholder="Company" oninput="autosave()"></div>
+              <div class="field"><label>Nombre</label><input type="text" id="q3-name" placeholder="Nombre completo"></div>
+              <div class="field"><label>Cargo</label><input type="text" id="q3-title" placeholder="ej. Gerente de Operaciones"></div>
+              <div class="field"><label>Empresa</label><input type="text" id="q3-co" placeholder="Empresa"></div>
             </div>
-            <div class="field"><label>Cita — textual</label><textarea id="q3-text" placeholder="Impacto día a día. ¿Qué ya no tienen que hacer? ¿Qué cambió en su semana?" oninput="autosave()"></textarea></div>
+            <div class="field"><label>Cita — textual</label><textarea id="q3-text" placeholder="Impacto día a día. ¿Qué ya no tienen que hacer? ¿Qué cambió en su semana?"></textarea></div>
             <div class="quote-checks">
-              <div class="check-lbl">Pasa el test</div>
-              <div class="chk"><input type="checkbox" id="q3c1" onchange="autosave()"><label for="q3c1">Contiene un número específico (%, $, tiempo, cantidad)</label></div>
-              <div class="chk"><input type="checkbox" id="q3c2" onchange="autosave()"><label for="q3c2">Contiene una referencia clara de antes/después o mejora</label></div>
-              <div class="chk"><input type="checkbox" id="q3c3" onchange="autosave()"><label for="q3c3">NO puede aplicar a ninguna otra empresa o situación</label></div>
+              <div class="check-lbl">Pasa el filtro</div>
+              <div class="chk"><input type="checkbox" id="q3c1" onchange="updateReadiness()"><label for="q3c1">Contiene un número específico (%, $, tiempo, cantidad)</label></div>
+              <div class="chk"><input type="checkbox" id="q3c2" onchange="updateReadiness()"><label for="q3c2">Contiene una referencia clara de antes/después o mejora</label></div>
+              <div class="chk"><input type="checkbox" id="q3c3" onchange="updateReadiness()"><label for="q3c3">NO podría aplicar a ninguna otra empresa o situación</label></div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 05 CHECKLIST -->
+    <!-- 05 -->
     <div class="section open" id="s-checklist">
       <div class="section-hdr" onclick="toggleSection('s-checklist')">
-        <div class="section-title"><span class="section-num">05</span>Publication Preparación Checklist</div>
+        <div class="section-title"><span class="section-num">05</span>Checklist de Publicación</div>
         <span class="chevron">▾</span>
       </div>
       <div class="section-body">
         <div class="readiness-wrap">
           <div class="readiness-left">
             <div class="readiness-big" id="r-pct">0%</div>
-            <div class="readiness-sub-lbl">complete</div>
+            <div class="readiness-sub-lbl">completo</div>
           </div>
           <div class="readiness-right">
-            <div class="readiness-desc" id="r-desc">Completa el checklist para seguir el estado de publicación.</div>
+            <div class="readiness-desc" id="r-desc">Completa el checklist para registrar el progreso hacia la publicación.</div>
             <div class="r-track2"><div class="r-fill2" id="r-fill" style="width:0"></div></div>
           </div>
         </div>
 
         <div class="checklist">
-          <div class="check-row"><input type="checkbox" id="ch1" onchange="updatePreparación()">
-            <div class="check-row-text"><label class="check-row-label" for="ch1">Titular con número específico, resultado y plazo de tiempo</label>
-            <div class="check-row-desc">ej. "Agencia inmobiliaria de Medellín redujo tiempo de respuesta de 4h a 2min y aumentó tasa de cierre un 38% en 60 días."</div></div></div>
-          <div class="check-row"><input type="checkbox" id="ch2" onchange="updatePreparación()">
-            <div class="check-row-text"><label class="check-row-label" for="ch2">Ejecutivo nombrado O razón documentada de anonimización</label>
-            <div class="check-row-desc">Si es anónimo: registra el motivo específico (legal, competitivo, NDA). "El cliente lo solicitó" no es documentación suficiente.</div></div></div>
-          <div class="check-row"><input type="checkbox" id="ch3" onchange="updatePreparación()">
+          <div class="check-row"><input type="checkbox" id="ch1" onchange="updateReadiness()">
+            <div class="check-row-text"><label class="check-row-label" for="ch1">Titular con número específico, resultado y período de tiempo</label>
+            <div class="check-row-desc">ej. "Agencia inmobiliaria en Medellín redujo tiempo de respuesta de 4h a 2min y aumentó tasa de cierre un 38% en 60 días."</div></div></div>
+
+          <div class="check-row"><input type="checkbox" id="ch2" onchange="updateReadiness()">
+            <div class="check-row-text"><label class="check-row-label" for="ch2">Ejecutivo nombrado O razón documentada para anonimización</label>
+            <div class="check-row-desc">Si es anónimo: documenta la razón específica (legal, competencia, NDA). "El cliente lo pidió" no es documentación suficiente.</div></div></div>
+
+          <div class="check-row"><input type="checkbox" id="ch3" onchange="updateReadiness()">
             <div class="check-row-text"><label class="check-row-label" for="ch3">Al menos 3 métricas antes/después con líneas base verificadas</label>
-            <div class="check-row-desc">Cada número "después" necesita un "antes". Si el cliente no puede dar la línea base, esa métrica no se puede publicar.</div></div></div>
-          <div class="check-row"><input type="checkbox" id="ch4" onchange="updatePreparación()">
+            <div class="check-row-desc">Cada número "después" necesita un "antes." Si el cliente no puede proveer la línea base, esa métrica no puede publicarse.</div></div></div>
+
+          <div class="check-row"><input type="checkbox" id="ch4" onchange="updateReadiness()">
             <div class="check-row-text"><label class="check-row-label" for="ch4">Al menos 1 métrica de resultado específica del vertical</label>
-            <div class="check-row-desc">Inmobiliaria: conversión de leads o tiempo de respuesta. Banca/logística: cumplimiento, reducción de errores o tiempo de reportería.</div></div></div>
-          <div class="check-row"><input type="checkbox" id="ch5" onchange="updatePreparación()">
+            <div class="check-row-desc">Inmobiliaria: conversión de leads o tiempo de respuesta. Banca/logística: cumplimiento normativo, reducción de errores o tiempo de reporte.</div></div></div>
+
+          <div class="check-row"><input type="checkbox" id="ch5" onchange="updateReadiness()">
             <div class="check-row-text"><label class="check-row-label" for="ch5">Al menos 1 hallazgo no obvio documentado</label>
             <div class="check-row-desc">Algo inesperado. Un beneficio secundario. Una métrica que mejoró sin estar en el alcance. Esto es lo que hace memorable el caso de éxito.</div></div></div>
-          <div class="check-row"><input type="checkbox" id="ch6" onchange="updatePreparación()">
+
+          <div class="check-row"><input type="checkbox" id="ch6" onchange="updateReadiness()">
             <div class="check-row-text"><label class="check-row-label" for="ch6">Aprobación del cliente confirmada por escrito</label>
             <div class="check-row-desc">Email o aprobación firmada. Captura guardada en la carpeta del proyecto. Las aprobaciones verbales no cuentan para publicación.</div></div></div>
-          <div class="check-row"><input type="checkbox" id="ch7" onchange="updatePreparación()">
+
+          <div class="check-row"><input type="checkbox" id="ch7" onchange="updateReadiness()">
             <div class="check-row-text"><label class="check-row-label" for="ch7">Versión resumen de una página lista</label>
-            <div class="check-row-desc">El PDF/slide que va en propuestas y presentaciones. Debe funcionar solo sin el caso completo. Es un documento diferente.</div></div></div>
+            <div class="check-row-desc">El PDF/slide que va en propuestas y presentaciones. Debe funcionar solo sin el caso completo. Es un documento distinto.</div></div></div>
         </div>
 
         <div class="divider"></div>
         <div class="frow" style="margin-bottom:0">
           <div class="field"><label>Hallazgo no obvio (descríbelo)</label>
-            <textarea id="nof-text" placeholder="¿Qué sorprendió al cliente? ¿Qué mejoró sin estar en el alcance? ¿Qué descubrimiento cambió nuestro enfoque de implementación?" oninput="autosave()" style="min-height:72px"></textarea></div>
-          <div class="field"><label>Bloqueos de publicación / notas</label>
-            <textarea id="pub-notes" placeholder="Cualquier cosa que bloquee la publicación. Estado de revisión legal. Aprobaciones pendientes. Fechas por confirmar." oninput="autosave()" style="min-height:60px"></textarea></div>
+            <textarea id="nof-text" placeholder="¿Qué sorprendió al cliente? ¿Qué mejoró sin estar en el alcance? ¿Qué descubrimiento cambió nuestro enfoque de implementación?" style="min-height:72px"></textarea></div>
+          <div class="field"><label>Bloqueos / notas para publicación</label>
+            <textarea id="pub-notes" placeholder="Cualquier cosa que bloquee la publicación. Estado de revisión legal. Aprobaciones pendientes. Fechas por confirmar." style="min-height:60px"></textarea></div>
         </div>
       </div>
     </div>
@@ -423,17 +413,16 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); font
   </main>
 </div>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="modal">
   <div class="modal">
     <div class="modal-hdr">
-      <span class="modal-title">Exportar — Pegar en template de caso de éxito</span>
+      <span class="modal-title">Exportar — Pegar en la plantilla de caso de éxito</span>
       <button class="modal-close" onclick="closeModal()">×</button>
     </div>
     <div class="modal-body"><pre id="export-content"></pre></div>
     <div class="modal-footer">
       <button class="btn" onclick="closeModal()">Cerrar</button>
-      <button class="btn btn-accent" onclick="copyExport()">Copiar al Portapapeles</button>
+      <button class="btn btn-accent" onclick="copyExport()">Copiar al portapapeles</button>
     </div>
   </div>
 </div>
@@ -443,66 +432,66 @@ var V = 're';
 
 var DATA = {
   re: {
-    label:'Inmobiliarias', icon:'🏢', tagClass:'tag-re', vtabClass:'active-re',
+    label:'Inmobiliaria', icon:'🏢', tagClass:'tag-re', vtabClass:'active-re',
     questions:[
-      {id:'re1', text:'¿Cuál era tu volumen mensual promedio de leads antes de empezar, y cómo lo estabas rastreando?', meta:'Obtén el número. Si dicen "muchos", indaga por canal: portales, redes, referidos, web.'},
-      {id:'re2', text:'¿Cuánto tiempo tardaba desde que entraba un lead hasta el primer contacto — en promedio y en el peor caso?', meta:'Objetivo: horas o minutos. Pregunta específicamente por noches y fines de semana — ahí está la historia.'},
-      {id:'re3', text:'¿Qué porcentaje del tiempo de los agentes se iba en clasificación de leads vs. vender realmente?', meta:'Suele subestimarse. Ayúdales a calcular: horas/día × número de agentes × 5 días.'},
-      {id:'re4', text:'¿Cuál era tu tasa de cierre sobre leads cualificados antes de la implementación? ¿Y ahora?', meta:'La mayoría lo rastrea. Si no: cierres ÷ citas cualificadas × 100.'},
-      {id:'re5', text:'¿Cuánto gastabas en adquisición de leads al mes y qué % de esos leads eran realmente cualificados?', meta:'Desbloquea el CPL y costo por lead cualificado — los dos números más poderosos del caso de éxito.'},
-      {id:'re6', text:'¿Qué pasaba con los leads que llegaban fuera del horario laboral antes? ¿Qué pasa ahora?', meta:'Las noches y fines de semana es donde se ganan o pierden los deals. Esta es la historia del tiempo de respuesta.'},
-      {id:'re7', text:'¿Cuál fue el beneficio más inesperado que experimentaron — algo que no esperaban que mejorara?', meta:'Hallazgo no obvio. No omitas esto. El resultado inesperado es lo que hace memorable el caso.'},
+      {id:'re1', text:'¿Cuál era tu volumen promedio de leads al mes antes de empezar, y cómo lo estabas midiendo?', meta:'Busca el número. Si dicen "muchos", sondea cada canal por separado: portales, redes, referidos, web.'},
+      {id:'re2', text:'¿Cuánto tiempo tardabas desde que entraba un lead hasta el primer contacto — en promedio y en el peor caso?', meta:'Objetivo: horas o minutos. Pregunta específicamente por noches y fines de semana — ahí está la historia.'},
+      {id:'re3', text:'¿Qué porcentaje del tiempo de los agentes se destinaba a clasificar y cualificar leads vs. vender activamente?', meta:'Suele subestimarse. Ayúdalos a calcular: horas/día × número de agentes × 5 días.'},
+      {id:'re4', text:'¿Cuál era tu tasa de cierre sobre leads cualificados antes de la implementación? ¿Y cuál es ahora?', meta:'La mayoría lo tiene. Si no, usa: negocios cerrados ÷ citas cualificadas × 100.'},
+      {id:'re5', text:'¿Cuánto gastabas en captación de leads por mes, y qué porcentaje de esos leads eran realmente cualificados?', meta:'Esto da el costo por lead y costo por lead cualificado — los dos números más potentes del caso de éxito.'},
+      {id:'re6', text:'¿Qué pasaba con los leads que llegaban fuera del horario laboral antes? ¿Qué pasa ahora?', meta:'Noches y fines de semana son donde se ganan o pierden los negocios. Esta es la historia del tiempo de respuesta.'},
+      {id:'re7', text:'¿Cuál fue el beneficio más inesperado que experimentaron — algo que no esperaban que mejoraría?', meta:'Hallazgo no obvio. No lo omitas. El resultado inesperado es lo que hace memorable el caso de éxito.'},
     ],
     metrics:[
       {id:'mr1', label:'Tiempo promedio de respuesta a leads', unit:'horas / minutos'},
       {id:'mr2', label:'Leads cualificados por mes', unit:'cantidad'},
-      {id:'mr3', label:'Cerrar rate on qualified leads', unit:'%'},
-      {id:'mr4', label:'Horas/semana de agentes en clasificación', unit:'horas'},
+      {id:'mr3', label:'Tasa de cierre sobre leads cualificados', unit:'%'},
+      {id:'mr4', label:'Horas/semana de agentes en clasificación de leads', unit:'horas'},
       {id:'mr5', label:'Costo por lead cualificado', unit:'USD'},
       {id:'mr6', label:'Leads fuera de horario convertidos', unit:'cantidad/mes'},
-      {id:'mr7', label:'Comisiones cerradas al mes', unit:'USD'},
+      {id:'mr7', label:'Comisiones cerradas por mes', unit:'USD'},
     ],
   },
   bank: {
     label:'Banca y Servicios Financieros', icon:'🏦', tagClass:'tag-bank', vtabClass:'active-bank',
     questions:[
-      {id:'bk1', text:'¿Cuántas personas participaban en producir cada reporte de cumplimiento o regulatorio, y cuánto tiempo tomaba de principio a fin?', meta:'Obtén personas Y horas. Luego multiplica: personas × horas × tarifa salarial = costo real de producción.'},
-      {id:'bk2', text:'¿Cuántos hallazgos regulatorios o discrepancias de datos internos tenían por trimestre antes de la implementación?', meta:'Los reguladores lo rastrean. El cliente casi seguro tiene este número en sus archivos.'},
-      {id:'bk3', text:'¿Cuánto duraba el cierre de mes y cuál era el mayor cuello de botella en ese proceso?', meta:'En días, no "unos pocos días". La descripción del cuello de botella se convierte en el gancho de la historia.'},
-      {id:'bk4', text:'¿Cuánto costó realmente la remediación de errores — en horas de personal, revisión externa o multas directas?', meta:'Usa el benchmark de $5,000/incidente como referencia: "¿Es eso más o menos correcto para tu situación?"'},
-      {id:'bk5', text:'¿Qué porcentaje del tiempo de tu equipo de ops se iba en preparación de datos vs. análisis real? ¿Cuál es esa proporción ahora?', meta:'Esta es la historia de la Calculadora de Costos Operativos. Obtén el porcentaje anterior explícitamente — no dejes que estimen.'},
-      {id:'bk6', text:'¿Tuvieron resultados de auditoría o revisión regulatoria directamente relacionados con la implementación?', meta:'Una auditoría limpia post-implementación es un argumento poderoso. Pregunta directamente — puede que no lo mencionen solos.'},
-      {id:'bk7', text:'¿Qué habría pasado — en términos concretos — si no hubieran automatizado esto cuando lo hicieron?', meta:'Obtiene el contrafactual. Suele producir la cita más poderosa de todo el caso de éxito.'},
+      {id:'bk1', text:'¿Cuántas personas participaban en la producción de cada reporte de cumplimiento y cuánto tiempo tomaba de extremo a extremo?', meta:'Obtén personas Y horas. Luego multiplica: personas × horas × costo hora = costo real de producción.'},
+      {id:'bk2', text:'¿Cuántos hallazgos regulatorios o discrepancias internas de datos tenían por trimestre antes de la implementación?', meta:'Los reguladores lo rastrean. El cliente casi seguro tiene este número en sus archivos.'},
+      {id:'bk3', text:'¿Cuánto duraba el cierre de mes y cuál era el mayor cuello de botella en ese proceso?', meta:'En días, no "unos días." La descripción del cuello de botella se convierte en el gancho de la historia.'},
+      {id:'bk4', text:'¿Cuánto costaba realmente la remediación de errores — en horas de personal, revisión externa o multas directas?', meta:'Usa $5,000/incidente como referencia: "¿Eso es aproximadamente correcto para su caso?"'},
+      {id:'bk5', text:'¿Qué porcentaje del tiempo del equipo de operaciones se dedicaba a preparar datos vs. análisis real? ¿Cuál es ese ratio ahora?', meta:'Es la historia de la Calculadora de Costos Operativos. Obtén el porcentaje anterior explícitamente — no dejes que estimen.'},
+      {id:'bk6', text:'¿Tuvieron algún resultado de auditoría o revisión regulatoria directamente relacionado con la implementación?', meta:'Una auditoría limpia post-implementación es un punto de prueba muy poderoso. Pregunta directamente — puede que no lo ofrezcan voluntariamente.'},
+      {id:'bk7', text:'¿Qué habría pasado — en términos concretos — si no hubieran automatizado esto cuando lo hicieron?', meta:'Obtiene la contrafactual. A menudo produce la cita más poderosa de todo el caso de éxito.'},
     ],
     metrics:[
       {id:'bm1', label:'Tiempo de producción de reporte de cumplimiento', unit:'días'},
       {id:'bm2', label:'Hallazgos regulatorios por trimestre', unit:'cantidad'},
       {id:'bm3', label:'Duración del cierre de mes', unit:'días'},
-      {id:'bm4', label:'Horas/semana del equipo de ops en preparación de datos', unit:'horas'},
-      {id:'bm5', label:'Costo de remediación de errores/mes', unit:'USD'},
-      {id:'bm6', label:'% de analistas en preparación de datos vs. análisis', unit:'%'},
-      {id:'bm7', label:'Gasto anual en herramientas BI/reportería', unit:'USD'},
+      {id:'bm4', label:'Horas semanales del equipo en preparación de datos', unit:'horas'},
+      {id:'bm5', label:'Costo de remediación de errores por mes', unit:'USD'},
+      {id:'bm6', label:'% de analistas preparando datos vs. analizando', unit:'%'},
+      {id:'bm7', label:'Gasto anual en herramientas de BI y reportería', unit:'USD'},
     ],
   },
   log: {
     label:'Logística y Cadena de Suministro', icon:'📦', tagClass:'tag-log', vtabClass:'active-log',
     questions:[
-      {id:'lg1', text:'¿Qué tan actualizada era la información en tu reporte operativo semanal? ¿Con qué frecuencia se tomaban decisiones con datos de más de 48h de antigüedad?', meta:'La frescura de datos es el dolor principal. Obtén un tiempo de retraso específico en horas o días.'},
-      {id:'lg2', text:'¿Cuál era tu tasa de cumplimiento de SLA y cuál era la causa principal de los incumplimientos?', meta:'Obtén el porcentaje Y la causa. La causa es la historia: datos tardíos, errores manuales, sistemas desconectados.'},
-      {id:'lg3', text:'¿Cuál era tu tasa de exactitud de inventario y cuánta merma o pérdida atribuías a errores de datos?', meta:'Si no pueden dar un %, pide el valor en dólares de las pérdidas en los últimos 12 meses.'},
-      {id:'lg4', text:'¿De cuántos sistemas desconectados extraía tu equipo datos para construir una sola vista operativa?', meta:'Cuenta ERPs, hojas de cálculo, portales, sistemas de transportistas, email — todo. El número suele ser impactante.'},
-      {id:'lg5', text:'¿Cuántas horas por semana dedicaba tu equipo solo a construir y distribuir el reporte semanal?', meta:'Multiplica por el salario. Suele ser el número más fácil de monetizar en el caso de éxito.'},
-      {id:'lg6', text:'¿Qué decisiones no podías tomar en tiempo real por el retraso en los reportes? Dame un ejemplo específico.', meta:'El ejemplo específico es lo que va en el caso de éxito. "No podíamos reaccionar rápido" no convence a prospectos.'},
-      {id:'lg7', text:'¿Qué te sorprendió más de la implementación — técnica u operativamente?', meta:'Hallazgo no obvio. ¿Qué cambió que no esperaban que cambiara?'},
+      {id:'lg1', text:'¿Qué tan actualizados estaban los datos en tu reporte operativo semanal? ¿Con qué frecuencia se tomaban decisiones con información de más de 48h de antigüedad?', meta:'La frescura de los datos es el dolor central. Obtén un tiempo de retraso específico en horas o días.'},
+      {id:'lg2', text:'¿Cuál era tu tasa de cumplimiento de SLA, y cuál era la principal causa de los incumplimientos?', meta:'Obtén el porcentaje Y la causa. La causa es la historia: datos tardíos, errores manuales, sistemas desconectados.'},
+      {id:'lg3', text:'¿Cuál era tu tasa de precisión de inventario, y cuánto de la merma o castigo atribuías a errores de datos?', meta:'Si no pueden dar un %, pregunta por el valor en USD de los castigos en los últimos 12 meses.'},
+      {id:'lg4', text:'¿Cuántos sistemas desconectados tenía tu equipo que consultar para construir una vista operativa única?', meta:'Cuenta ERPs, hojas de cálculo, portales, sistemas de transportistas, email — todo. El número suele ser impactante.'},
+      {id:'lg5', text:'¿Cuántas horas por semana invertía tu equipo solo en construir y distribuir el reporte semanal?', meta:'Multiplica por el costo hora. Suele ser el número más fácil de monetizar en el caso de éxito.'},
+      {id:'lg6', text:'¿Qué decisiones no podías tomar en tiempo real por el retraso en reportería? Dame un ejemplo específico.', meta:'El ejemplo específico es lo que va en el caso de éxito. "No podíamos reaccionar rápido" no impacta a los prospectos.'},
+      {id:'lg7', text:'¿Qué te sorprendió más de la implementación — técnicamente u operativamente?', meta:'Hallazgo no obvio. ¿Qué cambió sin que lo esperaran?'},
     ],
     metrics:[
-      {id:'lm1', label:'Actualidad de datos en reporte operativo', unit:'horas de retraso'},
+      {id:'lm1', label:'Frescura de datos del reporte operativo', unit:'horas de retraso'},
       {id:'lm2', label:'Tasa de cumplimiento de SLA', unit:'%'},
-      {id:'lm3', label:'Tasa de exactitud de inventario', unit:'%'},
+      {id:'lm3', label:'Tasa de precisión de inventario', unit:'%'},
       {id:'lm4', label:'Cantidad de sistemas desconectados', unit:'cantidad'},
-      {id:'lm5', label:'Horas de reportería semanal (total equipo)', unit:'horas'},
-      {id:'lm6', label:'Pérdidas anuales por errores de datos', unit:'USD'},
-      {id:'lm7', label:'Tiempo de respuesta a decisiones (problema a acción)', unit:'horas'},
+      {id:'lm5', label:'Horas semanales en reportería (total equipo)', unit:'horas'},
+      {id:'lm6', label:'Castigos anuales por errores de datos', unit:'USD'},
+      {id:'lm7', label:'Tiempo de reacción ante incidentes', unit:'horas'},
     ],
   },
 };
@@ -525,10 +514,9 @@ function renderQuestions(v) {
   var qs = DATA[v].questions;
   var html = '';
   qs.forEach(function(q, i) {
-    html += '<div class="q-item">';
-    html += '<div class="q-hdr"><span class="q-idx">Q'+(i+1)+'</span><div class="q-content"><div class="q-text">'+q.text+'</div>';
+    html += '<div class="q-item"><div class="q-hdr"><span class="q-idx">P'+(i+1)+'</span><div class="q-content"><div class="q-text">'+q.text+'</div>';
     if(q.meta) html += '<div class="q-meta">↳ '+q.meta+'</div>';
-    html += '</div></div><div class="q-body"><textarea id="ans-'+q.id+'" placeholder="Notas de entrevista…" oninput="autosave()" rows="3"></textarea></div></div>';
+    html += '</div></div><div class="q-body"><textarea id="ans-'+q.id+'" placeholder="Notas de entrevista…" rows="3"></textarea></div></div>';
   });
   document.getElementById('questions-body').innerHTML = html;
 }
@@ -538,8 +526,8 @@ function renderMetrics(v) {
   var html = '';
   ms.forEach(function(m) {
     html += '<tr><td><div class="m-label">'+m.label+'</div><div class="m-unit">'+m.unit+'</div></td>';
-    html += '<td class="col-before"><input type="text" id="mb-'+m.id+'" placeholder="—" oninput="autosave()"></td>';
-    html += '<td class="col-after"><input type="text" id="ma-'+m.id+'" placeholder="—" oninput="autosave()"></td></tr>';
+    html += '<td class="col-before"><input type="text" id="mb-'+m.id+'" placeholder="—"></td>';
+    html += '<td class="col-after"><input type="text" id="ma-'+m.id+'" placeholder="—"></td></tr>';
   });
   document.getElementById('metrics-body').innerHTML = html;
 }
@@ -554,7 +542,7 @@ function navTo(sectionId, navId) {
   document.getElementById(sectionId).scrollIntoView({behavior:'smooth', block:'start'});
 }
 
-function updatePreparación() {
+function updateReadiness() {
   var cbs = document.querySelectorAll('#s-checklist input[type=checkbox]');
   var total = cbs.length, done = 0;
   cbs.forEach(function(c) { if(c.checked) done++; });
@@ -564,15 +552,9 @@ function updatePreparación() {
   document.getElementById('r-fill').style.width = pctStr;
   document.getElementById('sb-pct').textContent = pctStr;
   document.getElementById('sb-bar').style.width = pctStr;
-  var descs = ['Completa el checklist para seguir el estado de publicación.',
-    'Empezando. Sigue adelante.',
-    'Avanzando — más de la mitad.',
-    'Casi listo. Revisa los pendientes.',
-    'Listo para revisión de publicación.'];
-  document.getElementById('r-desc').textContent = pct === 100 ? descs[4] : pct >= 70 ? descs[3] : pct >= 50 ? descs[2] : pct >= 20 ? descs[1] : descs[0];
+  var desc = pct===100 ? 'Listo para revisión de publicación.' : pct>=70 ? 'Casi listo. Revisa los items restantes.' : pct>=50 ? 'Buen progreso — más de la mitad.' : pct>=20 ? 'Comenzando. Sigue adelante.' : 'Completa el checklist para registrar el progreso hacia la publicación.';
+  document.getElementById('r-desc').textContent = desc;
 }
-
-function autosave() {} // placeholder
 
 function val(id) {
   var el = document.getElementById(id);
@@ -586,17 +568,17 @@ function exportSummary() {
   var lines = [];
 
   lines.push('═══════════════════════════════════════════════════════════');
-  lines.push('  RESUMEN CASO DE ÉXITO — ' + d.label.toUpperCase());
-  lines.push('  Generado: ' + new Date().toLocaleString());
+  lines.push('  RESUMEN DE CASO DE ÉXITO — ' + d.label.toUpperCase());
+  lines.push('  Generado: ' + new Date().toLocaleString('es-PA'));
   lines.push('═══════════════════════════════════════════════════════════\n');
 
-  lines.push('INFORMACIÓN DEL CLIENTE');
+  lines.push('DATOS DEL CLIENTE');
   lines.push('──────────────────────────────────────────────────────────');
-  lines.push('Empresa:         ' + (val('c-company') || '—'));
-  lines.push('Vertical:        ' + d.label);
-  lines.push('Contacto:        ' + (val('c-contact') || '—') + (val('c-ctitle') ? ' · ' + val('c-ctitle') : ''));
+  lines.push('Empresa:          ' + (val('c-company') || '—'));
+  lines.push('Vertical:         ' + d.label);
+  lines.push('Contacto:         ' + (val('c-contact') || '—') + (val('c-ctitle') ? ' · ' + val('c-ctitle') : ''));
   lines.push('Fecha entrevista: ' + (val('c-date') || '—'));
-  lines.push('Entrevistador:   ' + (val('c-interviewer') || '—'));
+  lines.push('Entrevistador:    ' + (val('c-interviewer') || '—'));
   lines.push('Confidencialidad: ' + (confText || '—'));
   lines.push('');
 
@@ -604,8 +586,8 @@ function exportSummary() {
   lines.push('──────────────────────────────────────────────────────────');
   d.questions.forEach(function(q, i) {
     var ans = val('ans-' + q.id);
-    lines.push('Q' + (i+1) + ': ' + q.text);
-    lines.push('A:  ' + (ans || '[Sin respuesta registrada]'));
+    lines.push('P' + (i+1) + ': ' + q.text);
+    lines.push('R:  ' + (ans || '[Sin respuesta registrada]'));
     lines.push('');
   });
 
@@ -614,25 +596,24 @@ function exportSummary() {
   d.metrics.forEach(function(m) {
     var before = val('mb-' + m.id);
     var after = val('ma-' + m.id);
-    var hasData = before || after;
     lines.push(m.label + ' (' + m.unit + ')');
-    lines.push('  Antes:   ' + (before || '—') + '  →  Después: ' + (after || '—') + (!hasData ? '   [SIN COMPLETAR]' : ''));
+    lines.push('  Antes:   ' + (before || '—') + '   →   Después: ' + (after || '—') + (!before && !after ? '   [NO COMPLETADO]' : ''));
   });
   lines.push('');
 
   lines.push('CITAS');
   lines.push('──────────────────────────────────────────────────────────');
-  [{role:'Sponsor Ejecutivo [REQUERIDA]', n:'q1-name', t:'q1-title', co:'q1-co', txt:'q1-text', c:['q1c1','q1c2','q1c3']},
-   {role:'Líder Técnico [REQUERIDA]',    n:'q2-name', t:'q2-title', co:'q2-co', txt:'q2-text', c:['q2c1','q2c2','q2c3']},
-   {role:'Responsable Operativo [OPCIONAL]', n:'q3-name', t:'q3-title', co:'q3-co', txt:'q3-text', c:['q3c1','q3c2','q3c3']},
+  [{rol:'Sponsor Ejecutivo [REQUERIDA]', n:'q1-name', t:'q1-title', co:'q1-co', txt:'q1-text', c:['q1c1','q1c2','q1c3']},
+   {rol:'Líder Técnico [REQUERIDA]',     n:'q2-name', t:'q2-title', co:'q2-co', txt:'q2-text', c:['q2c1','q2c2','q2c3']},
+   {rol:'Responsable Operativo [OPCIONAL]', n:'q3-name', t:'q3-title', co:'q3-co', txt:'q3-text', c:['q3c1','q3c2','q3c3']},
   ].forEach(function(q) {
     var qtext = val(q.txt);
-    lines.push('[' + q.role + ']');
+    lines.push('[' + q.rol + ']');
     if (qtext) {
       lines.push('"' + qtext + '"');
-      lines.push('— ' + (val(q.n) || '—') + ', ' + (val(q.t) || '—') + ' · ' + (val(q.co) || '—'));
+      lines.push('— ' + (val(q.n)||'—') + ', ' + (val(q.t)||'—') + ' · ' + (val(q.co)||'—'));
       var c = q.c.map(function(id){ var el=document.getElementById(id); return (el&&el.checked)?'✓':'✗'; });
-      lines.push('Checks: Tiene número ' + c[0] + '  Antes/después ' + c[1] + '  Única ' + c[2]);
+      lines.push('Checks del filtro: Tiene número ' + c[0] + '  Antes/después ' + c[1] + '  Única ' + c[2]);
     } else {
       lines.push('[Sin cita registrada]');
     }
@@ -647,7 +628,7 @@ function exportSummary() {
   lines.push('CHECKLIST DE PUBLICACIÓN');
   lines.push('──────────────────────────────────────────────────────────');
   var labels = [
-    'Titular con número, resultado y plazo',
+    'Titular con número, resultado y período',
     'Ejecutivo nombrado O razón de anonimización documentada',
     '3+ métricas antes/después con líneas base',
     '1+ métrica de resultado específica del vertical',
@@ -663,7 +644,7 @@ function exportSummary() {
     lines.push((checked?'✓':'✗') + '  ' + labels[i-1]);
   }
   lines.push('');
-  lines.push('Preparación: ' + done + '/7 (' + Math.round(done/7*100) + '%)');
+  lines.push('Progreso: ' + done + '/7 (' + Math.round(done/7*100) + '%)');
 
   if (val('pub-notes')) {
     lines.push('');
@@ -682,8 +663,8 @@ function exportSummary() {
 function closeModal() { document.getElementById('modal').classList.remove('show'); }
 
 function copyExport() {
+  var btn = event.target;
   navigator.clipboard.writeText(document.getElementById('export-content').textContent).then(function() {
-    var btn = event.target;
     var orig = btn.textContent;
     btn.textContent = '✓ Copiado';
     setTimeout(function(){ btn.textContent = orig; }, 2000);
@@ -691,17 +672,17 @@ function copyExport() {
 }
 
 function clearAll() {
-  if (!confirm('Limpiar todo fields? This cannot be undone.')) return;
+  if (!confirm('¿Limpiar todos los campos? Esta acción no se puede deshacer.')) return;
   document.querySelectorAll('input[type=text],input[type=date],textarea').forEach(function(el){ if(!el.readOnly) el.value=''; });
   document.querySelectorAll('input[type=checkbox]').forEach(function(el){ el.checked=false; });
   document.querySelectorAll('select').forEach(function(el){ el.selectedIndex=0; });
-  updatePreparación();
+  updateReadiness();
 }
 
 document.getElementById('modal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
 
 setVertical('re');
-updatePreparación();
+updateReadiness();
 </script>
 </body>
 </html>
